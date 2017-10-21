@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/signin', function () {
+    return '<a href="/google/auth">Click here to login</a> ';
+});
+
+
+Route::get('/{service}/auth', 'Auth\LoginController@redirectToProvider');
+
+Route::get('/{service}/handle', 'Auth\LoginController@handleProviderCallback');
