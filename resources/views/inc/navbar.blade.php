@@ -13,6 +13,7 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/survey">Survey</a></li>
+            <li><a href="/surveys">All Surveys</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

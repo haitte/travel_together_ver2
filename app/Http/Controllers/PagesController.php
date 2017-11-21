@@ -16,6 +16,8 @@ class PagesController extends Controller
             'title'=>'Let us get to know you',
             'destination'=>'DestinationName'
             );
-        return view('pages.matchmaking')-> with($data);
+        return view('surveys.create')-> with($data);
     }
+    
+    
 }

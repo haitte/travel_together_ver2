@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Surveys</h1>
+    <h1>You are most similar with</h1>
     @if(count($surveys) >0)
         @foreach($surveys as $survey)
             <div class="well">

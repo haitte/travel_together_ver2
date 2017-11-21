@@ -16,7 +16,11 @@ class SurveysController extends Controller
     {
         //
         $surveys = Survey::all();
+        
+        $surveys= Survey::orderBy('survey_id','desc')->paginate(5);
+        
         return view('surveys.index')->with('surveys',$surveys);
+        
     }
 
     /**
@@ -27,6 +31,7 @@ class SurveysController extends Controller
     public function create()
     {
         //
+        return view('surveys.create');
     }
 
     /**
@@ -38,6 +43,22 @@ class SurveysController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'trip_id'=>'required',
+            'first_p'=> 'required',
+            'second_p'=> 'required',
+            'third_p'=> 'required'
+            ]);
+            
+            //Create Survey
+            $survey = new Survey;
+            $survey->trip_id = $request->input('trip_id');
+            $survey->first_p = $request->input('first_p');
+            $survey->second_p = $request->input('second_p');
+            $survey->third_p = $request->input('third_p');
+            $survey->save();
+            
+            return redirect('/surveys')->with('success','Survey Added');
     }
 
     /**

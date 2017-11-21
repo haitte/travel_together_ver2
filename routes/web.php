@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/similarity', 'PagesController@similarity');
+
 Route::get('/survey', 'PagesController@survey');
 
 Route::resource('surveys','SurveysController');
