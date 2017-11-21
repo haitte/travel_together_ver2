@@ -10,15 +10,15 @@
         </div>
         <div class ="form-group">
             {{Form::label('first_p', 'First Preference')}}
-            {{Form::select('first_p', ['option1' => 'Food', 'option2' => 'Historical Sites', 'option3' => 'Exploring Art', 'option4' => 'Living like a Local', 'option5' => 'Finding hidden treasures'])}}
+            {{Form::select('first_p', ['option1' => 'Food', 'option2' => 'Historical Sites', 'option3' => 'Exploring Art', 'option4' => 'Living like a Local', 'option5' => 'Finding hidden treasures'], null, ['placeholder' => 'Pick one!'])}}
         </div>
         <div class ="form-group">
             {{Form::label('second_p', 'Second Preference')}}
-            {{Form::select('second_p', ['option1' => 'Food', 'option2' => 'Historical Sites', 'option3' => 'Exploring Art', 'option4' => 'Living like a Local', 'option5' => 'Finding hidden treasures'])}}
+            {{Form::select('second_p', ['option1' => 'Food', 'option2' => 'Historical Sites', 'option3' => 'Exploring Art', 'option4' => 'Living like a Local', 'option5' => 'Finding hidden treasures'], null, ['placeholder' => 'Pick one!'])}}
         </div>
         <div class ="form-group">
             {{Form::label('third_p', 'Third Preference')}}
-            {{Form::select('third_p', ['option1' => 'Food', 'option2' => 'Historical Sites', 'option3' => 'Exploring Art', 'option4' => 'Living like a Local', 'option5' => 'Finding hidden treasures'])}}
+            {{Form::select('third_p', ['option1' => 'Food', 'option2' => 'Historical Sites', 'option3' => 'Exploring Art', 'option4' => 'Living like a Local', 'option5' => 'Finding hidden treasures'], null, ['placeholder' => 'Pick one!'])}}
         </div>
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
