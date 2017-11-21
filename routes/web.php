@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/survey', 'PagesController@survey');
+
+Route::resource('surveys','SurveysController');

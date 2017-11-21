@@ -40,10 +40,10 @@ class SurveysController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $survey_id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($survey_id)
     {
         //
     }
@@ -54,7 +54,7 @@ class SurveysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($survey_id)
     {
         //
     }
@@ -63,10 +63,9 @@ class SurveysController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $survey_id)
     {
         //
     }
@@ -74,10 +73,10 @@ class SurveysController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $survey_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($survey_id)
     {
         //
     }
