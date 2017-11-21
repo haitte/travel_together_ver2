@@ -11,6 +11,10 @@
                 Third preference is {{$survey->third_p}} <br /><br />
                 <small>Created at {{$survey->created_at}}</small>            
                 </div>
+                {!! Form::open(['action' => ['SurveysController@destroy',$survey->survey_id],'method' => 'POST','class'=>'pull-right']) !!}
+                    {{Form::hidden('_method','DELETE')}}
+                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                {!! Form::close()!!}
         @endforeach
         {{$surveys->links()}}
     @else

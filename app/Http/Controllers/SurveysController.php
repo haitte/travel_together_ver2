@@ -70,6 +70,8 @@ class SurveysController extends Controller
     public function show($survey_id)
     {
         //
+        $survey = Survey::find($survey_id);
+        return view('surveys.show')->with('survey',$survey);
     }
 
     /**
@@ -81,6 +83,8 @@ class SurveysController extends Controller
     public function edit($survey_id)
     {
         //
+        $survey = Survey::find($survey_id);
+        return view('surveys.edit')->with('survey',$survey);
     }
 
     /**
@@ -92,6 +96,23 @@ class SurveysController extends Controller
     public function update(Request $request, $survey_id)
     {
         //
+         $this->validate($request,[
+            'trip_id'=>'required',
+            'first_p'=> 'required',
+            'second_p'=> 'required',
+            'third_p'=> 'required'
+            ]);
+            
+            //Find Survey
+            $survey = Survey::find($survey_id);
+            $survey->trip_id = $request->input('trip_id');
+            $survey->first_p = $request->input('first_p');
+            $survey->second_p = $request->input('second_p');
+            $survey->third_p = $request->input('third_p');
+            $survey->save();
+            
+            return redirect('/surveys')->with('success','Survey Updated');
+        
     }
 
     /**
@@ -103,5 +124,9 @@ class SurveysController extends Controller
     public function destroy($survey_id)
     {
         //
+        $survey = Survey::find($survey_id);
+        $survey->delete();
+        
+        return redirect('/surveys')->with('success','Post Removed');
     }
 }
