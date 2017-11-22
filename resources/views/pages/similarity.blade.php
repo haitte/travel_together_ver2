@@ -5,12 +5,8 @@
     @if(count($surveys) >0)
         @foreach($surveys as $survey)
             <div class="well">
-                <h3>trip id is {{$survey->trip_id}}</h3> <br />
-                First preference is {{$survey->first_p}} <br />
-                Second preference is {{$survey->second_p}} <br />
-                Third preference is {{$survey->third_p}} <br /><br />
-                <small>Created at {{$survey->created_at}}</small>            
-                </div>
+                hello
+            </div>
         @endforeach
         {{$surveys->links()}}
     @else

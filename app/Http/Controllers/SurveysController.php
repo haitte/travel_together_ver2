@@ -4,9 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Survey;
+use App\User;
 
 class SurveysController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -128,5 +139,13 @@ class SurveysController extends Controller
         $survey->delete();
         
         return redirect('/surveys')->with('success','Post Removed');
+    }
+    
+    public function mytrips(){
+        
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        
+        return view('pages.mytrips')->with('trips', $user->trips);
     }
 }

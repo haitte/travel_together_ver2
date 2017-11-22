@@ -14,4 +14,8 @@ class Survey extends Model
     
     //Timestamps
     public $timestamps = true;
+    
+    public function trips(){
+        return $this->belongsTo('App\Trip');
+    }
 }
