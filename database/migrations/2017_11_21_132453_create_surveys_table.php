@@ -15,7 +15,8 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->increments('survey_id');
-            $table->integer('trip_id');
+            $table->integer('trip_id')->unsigned();
+            $table->foreign('trip_id')->references('trip_id')->on('trips');
             $table->string('first_p');
             $table->string('second_p');
             $table->string('third_p');

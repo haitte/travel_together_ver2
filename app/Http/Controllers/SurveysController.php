@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Survey;
 use App\User;
+use App\Trip;
+use DB;
 
 class SurveysController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
+     * 
      * @return void
      */
     public function __construct()
@@ -122,7 +124,7 @@ class SurveysController extends Controller
             $survey->third_p = $request->input('third_p');
             $survey->save();
             
-            return redirect('/surveys')->with('success','Survey Updated');
+            return redirect('/mytrips')->with('success','Trip Preferences Updated');
         
     }
 
@@ -141,11 +143,19 @@ class SurveysController extends Controller
         return redirect('/surveys')->with('success','Post Removed');
     }
     
+    public function sample(){
+        $data= array(
+            'title'=>'Let us get to know you',
+            'destination'=>'DestinationName'
+            );
+        return view('surveys.create')-> with($data);
+    }
+    
     public function mytrips(){
         
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        
+
         return view('pages.mytrips')->with('trips', $user->trips);
     }
 }

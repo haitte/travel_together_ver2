@@ -20,6 +20,6 @@ class Trip extends Model
     }
     
     public function survey(){
-        return $this->hasOne('App\Survey');
+        return $this->hasOne('App\Survey','trip_id');
     }
 }
