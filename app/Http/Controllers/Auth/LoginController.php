@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\LoginUser;
+
 use Laravel\Socialite\Facades\Socialite;
 
 use App\Http\Controllers\Controller;
+
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 
 // use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -22,8 +26,7 @@ use App\Http\Controllers\Controller;
 //     |
 //     */
 
-//     use AuthenticatesUsers;
-
+//   
 //     /**
 //      * Where to redirect users after login.
 //      *
@@ -44,14 +47,23 @@ use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
+    use AuthenticatesUsers;
+    protected $loginUser;
     /**
      * Redirect the user to the GitHub authentication page.
      *
      * @return Response
      */
-    public function redirectToProvider($service)
+    
+    public function __construct(LoginUser $loginUser)
     {
-        return Socialite::driver($service)->redirect();
+        $this->middleware('guest')->except('logout');
+        $this->loginUser = $loginUser;
+    }
+
+    public function redirectToProvider($provider)
+    {
+        return $this->loginUser->authenticate($provider);
     }
 
     /**
@@ -59,9 +71,10 @@ class LoginController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback($service)
+    public function handleProviderCallback($provider)
     {
-        $user = Socialite::driver($service)->user();  
-        return view('user')->with('user',$user)->with('service',$service);
+        $this->loginUser->login($provider);
+        return redirect('/home');
     }
+
 }

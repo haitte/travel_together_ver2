@@ -16,11 +16,24 @@ Route::get('/', function () {
 });
 
 
-Route::get('/signin', function () {
-    return '<a href="/google/auth">Click here to login</a> ';
-});
+// Route::get('/signin', function () {
+//     return '<a href="/google/auth">Click here to login</a> ';
+// });
 
 
 Route::get('/{service}/auth', 'Auth\LoginController@redirectToProvider');
 
 Route::get('/{service}/handle', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/signin2', function () {
+    return view('signin');
+});
+Route::get('/home2', function () {
+    return view('index');
+});
+//->name('home')
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

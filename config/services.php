@@ -38,7 +38,7 @@ return [
     'google' => [
         'client_id' => env('CLIENT_ID'),
         'client_secret' => env('CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/google/handle',
+        'redirect' => 'http://localhost:8000/travel_together_ver2/public/google/handle',
     ],
 
 
