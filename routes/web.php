@@ -12,17 +12,12 @@
 */
 
 Route::get('/', 'PagesController@index');
-
-Route::get('/similarity', 'PagesController@similarity');
-
 Route::get('/survey', 'PagesController@survey');
 Route::get('/myhome', 'PagesController@myhome');
-Route::get('/mytrips', 'SurveysController@mytrips');
-
-Route::get('/trips', 'TripsController@index');
 
 Route::resource('surveys','SurveysController');
 Route::resource('trips','TripsController');
+Route::resource('similarity','MatchmakingController');
 
 Auth::routes();
 
