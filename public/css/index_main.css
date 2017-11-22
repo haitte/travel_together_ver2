@@ -210,7 +210,11 @@ input{
     width: 14px;
     height: 14px;
     z-index: 9;
+<<<<<<< HEAD
     background:  no-repeat 0 0;
+=======
+    background: url(/images/cross-plus.png) no-repeat 0 0;
+>>>>>>> 4491954571dced980feb00ffeb8b24ab56f66b3c
     overflow: hidden;
 }
 
