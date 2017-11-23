@@ -1,16 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Congratulations {{$me->name}}! You have matched with</h1>
-    @if(!Auth::guest())
-        @foreach($trips as $trip)
-            @if($trip->destination == $my_trip->destination)
-                <div class="well">
-                <h1>{{$trip->user->name}}</h1>
-                </div>
-            @endif
-        @endforeach
-    @else
-        <p>Sorry, there are no available matches at the moment.</p>
+ @if(!Auth::guest())
+    @if(Auth::user()->id == $my_trip->user_id)
+        <h1>Congratulations {{$me->name}}! You have matched with</h1>
+        @if(!Auth::guest())
+            @foreach($trips as $trip)
+                @if( $trip -> destination == $my_trip -> destination )
+                    <div class="well">
+                    <h1>{{$trip->user->name}}</h1>
+                    </div>
+                @endif
+            @endforeach
+        @else
+            <p>Sorry, there are no available matches at the moment.</p>
+        @endif
+        @else
+        <p>Sorry, you may only view your matches.</p>
     @endif
+    @else
+    <p>Sorry, you need to login to view your matches</p>
+@endif
 @endsection

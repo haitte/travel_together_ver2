@@ -8,8 +8,13 @@
                 <div class="container"> 
                     <div class="row">
                         <div class="col-sm-8">
-                            <h3>{{$trip->destination}}</h3> 
-                            <i>{{$trip->start_date}} to {{$trip->end_date}}</i>
+                            <h3>{{$trip->destination}}</h3>
+                            <small><i>{{$trip->start_date}} to {{$trip->end_date}}</i></small> <br />
+                            @if(!Auth::guest())
+                                @if(Auth::user()->id == $trip->user_id)
+                                    <a href="/similarity/{{$trip->trip_id}}">View my similarities</a>
+                                @endif
+                            @endif
                         </div>
                         
                         <!--Buttons below only visible if authenticated-->
@@ -22,12 +27,14 @@
                                         {{Form::submit('Delete Trip', ['class' => 'btn btn-danger btn-block'])}}
                                     {!! Form::close()!!}
                                     <a href="" class="btn btn-primary btn-block disabled">Edit Trip</a>
-                                    <a href="" class="btn btn-primary btn-block">Reset Preferences</a>
+                                    <a href="/surveys/{{$trip->survey->survey_id}}/edit" class="btn btn-primary btn-block">Reset Preferences</a>
+                                    
                                     </div>
                                 </div>
                             @endif
                         @endif
                     </div>
+                    
                 </div>
             </div>
         @endforeach

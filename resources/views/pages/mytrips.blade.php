@@ -9,7 +9,12 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <h3>{{$trip->destination}}</h3> 
-                            <i>{{$trip->start_date}} to {{$trip->end_date}}</i>
+                            <small><i>{{$trip->start_date}} to {{$trip->end_date}}</i></small> <br />
+                            @if(!Auth::guest())
+                                @if(Auth::user()->id == $trip->user_id)
+                                    <a href="/similarity/{{$trip->trip_id}}">View my similarities</a>
+                                @endif
+                            @endif
                         </div>
                         
                         <div class="col-sm-4">

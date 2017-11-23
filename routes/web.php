@@ -14,6 +14,7 @@
 Route::get('/', 'PagesController@index');
 Route::get('/survey', 'PagesController@survey');
 Route::get('/myhome', 'PagesController@myhome');
+Route::get('/mytrips', 'SurveysController@mytrips');
 
 Route::resource('surveys','SurveysController');
 Route::resource('trips','TripsController');
