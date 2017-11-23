@@ -7,6 +7,7 @@ use App\Trip;
 use App\User;
 use Auth;
 
+
 class MatchmakingController extends Controller
 {
     /**
@@ -49,12 +50,19 @@ class MatchmakingController extends Controller
     public function show($trip_id)
     {
         //
+        
+        $my_trip = Trip::find($trip_id);
+        
+        $trips = Trip::where('trip_id', '!=', $trip_id)->get();
+
+        
         $data=array(
-            'trips' => Trip::where('trip_id', '!=', $trip_id)->get(),
+            'trips' => $trips,
             'users' => User::where('id', '!=', Auth::id())->get(),
             'me'  => Auth::user(),
-            'my_trip' => Trip::find($trip_id)
+            'my_trip' => $my_trip
             );
+            
         return view('pages.similarity')->with($data);
     }
 

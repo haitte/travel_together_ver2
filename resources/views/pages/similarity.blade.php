@@ -7,9 +7,19 @@
         @if(!Auth::guest())
             @foreach($trips as $trip)
                 @if( $trip -> destination == $my_trip -> destination )
-                    <div class="well">
-                    <h1>{{$trip->user->name}}</h1>
-                    </div>
+                    @if(
+                    (((($my_trip->start_date) >= ($trip->start_date)) && (($my_trip->end_date) <= ($trip->end_date)))||
+                    ((($my_trip->start_date) <= ($trip->start_date)) && (($my_trip->end_date) <= ($trip->end_date)))||
+                    ((($my_trip->start_date) >= ($trip->start_date)) && (($my_trip->end_date) >= ($trip->end_date)))||
+                    ((($my_trip->start_date) <= ($trip->start_date)) && (($my_trip->end_date) >= ($trip->end_date)))) &&
+                    ((($my_trip->start_date) <= ($trip->end_date)) || (($mytrip->end_date) >= ($trip->start_date)))
+                    )
+                        <div class="well">
+                        <h1>{{$trip->user->name}}</h1>
+                        </div>
+                    @else
+                        <p>Sorry, no-one is travelling your dates.</p>
+                    @endif
                 @endif
             @endforeach
         @else
