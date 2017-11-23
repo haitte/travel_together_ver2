@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                                     <button class="btn btn-default  col-xs-4 col-sm-2" id="planbutton" onclick="location.href='/signin';"style=" right: -5%;">
-                                        <img src="/images/cross-plus.png" width="14px";height="14px"; />my plan
+                                        <img src="images/brand/cross-plus.png" width="14px";height="14px"; />my plan
                                     </button>    
                                     <!-- <a class="btn btn-primary btn-sm col-xs-4 col-sm-2" id="planbutton2" href="/signin" role="button"><i></i>my plan</a> -->
                                     
