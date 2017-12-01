@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','IndexController@renderIndex');
 
 
 // Route::get('/signin', function () {
@@ -21,9 +19,9 @@ Route::get('/', function () {
 // });
 
 
-Route::get('/{service}/auth', 'Auth\LoginController@redirectToProvider');
+Route::get('/{provider}/auth', 'Auth\LoginController@redirectToProvider');
 
-Route::get('/{service}/handle', 'Auth\LoginController@handleProviderCallback');
+Route::get('/{provider}/handle', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/signin2', function () {
     return view('signin');
@@ -36,4 +34,7 @@ Route::get('/home2', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'IndexController@renderIndex');
+
+Route::resource('photos', 'PhotoController');
+// Route::resource('items','ItemsController');

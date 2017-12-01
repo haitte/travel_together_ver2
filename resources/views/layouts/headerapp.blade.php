@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="de">  <!--<![endif]-->
+<html class="no-js" lang="de"> 
 <html lang="{{ app()->getLocale() }}">
 <head>
   <title>{{ config('app.name', 'traveltogether') }}</title>
@@ -16,10 +13,77 @@
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-  <!-- js file -->
-    
+  <!-- style -->
+      <style>
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  /* * html .ui-autocomplete {
+    height: 100px;
+  } */
+  ._1iddsry {
+    font-weight: 700 !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    letter-spacing: 0.4px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    margin-bottom: 2px !important;
+}
+._2iddsry{
+    font-weight: 700 !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 19px !important;
+    line-height: 22px !important;
+    letter-spacing: undefined !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    max-height: 44px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    margin-bottom: 4px !important;
+}
+._3iddsry{
+    font-weight: 300 !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #rgba(72, 71, 72, 0.85) !important;
+}
+.post_plan_main{
+    padding-left:8%;
+    padding-right: 8%;
+}
+.post_row{
+
+}
+. post_clo{
+
+}
+  </style>
+
   <!-- css file -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href="css/animate.css" rel="stylesheet">
@@ -32,7 +96,6 @@
     <![endif]-->  
   <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
 </head>
   <body class="critical newhome">     
     <!-- Start Navigation -->
@@ -134,6 +197,47 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            $( "#datepicker" ).datepicker({
+                minDate: -20,
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( ".tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+   </script>
     
     <!-- Bootsnavs -->
     <script src="js/bootsnav.js"></script>

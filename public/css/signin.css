@@ -264,10 +264,8 @@
             transition: 0.2s ease;
             }
             .emptybox{
-           position:absolute;  
-           height:auto!important;
-            bottom: 0px;  
-              
+            text-align: center;
+            
             }
 
             @keyframes reveal {
@@ -290,3 +288,4 @@
                 margin-left: 0px;
             }
             }
+

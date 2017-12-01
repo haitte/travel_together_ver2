@@ -9,7 +9,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <style>
+        body {background: linear-gradient(135deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 100%);}
+        .navbar-default {
+            background-color: rgba(0,0,0,.075) !important;
+            border-color: rgba(0,0,0,.075)!important;
+        }
+    </style>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
