@@ -118,44 +118,80 @@
              <div id="container_user"> 
                 <div id=content_left class=cr_offset1>
                 
-    <?php
-    echo "<table>";
-    echo "<tr><td>img</td></tr>
-          <tr><td>User name</td></tr>
-          <tr><td>Age</td></tr>
-          <tr><td>Gender</td></tr>
-          <tr><td>Country</td></tr>";
-    echo "</table>";
-    ?>    
+               @if(!empty($profile))
+                <img src="{{ $profile->profile_pic  }}" class="profile_pic" alt="">
+               @else
+               <img src="{{ url('images/img1.jpg') }}" class="img1" alt="">
+               @endif
+                
+                @if(!empty($profile))
+                   <p class="lead">{{ $profile->name}}</p>
+                @else
+                <p></p>
+                @endif
+
+             @if(!empty($profile))
+                <p class="lead">Age: {{ $profile->age}}</p>
+             @else
+             <p></p>
+             @endif
+
+             @if(!empty($profile))
+                <p class="lead">Gender: {{ $profile->gender}}</p>
+             @else
+             <p></p>
+             @endif
+
+             @if(!empty($profile))
+                  <p class="lead">Resident: {{ $profile->country}}</p>
+             @else
+              <p></p>
+             @endif
+
                 </div>
     
                 <div id=content_right class=cr_offset2 style="padding-left:50px;">
                    <ul class="nav nav-pills nav-justified">
-                      <li class="active"><a data-toggle="tab" href="#Attended">User's Attended Event</a></li>
-                      <li ><a data-toggle="tab" href="#Published">User's Published Plan</a></li>
+                      <li class="active"><a data-toggle="tab" href="#Published">User's Published Event</a></li>
+                      <li ><a data-toggle="tab" href="#Attended">User's Attended Plan</a></li>
                    </ul>
 
                    <div class="tab-content">
-                      <div id="Attended" class="tab-pane fade in active">
+                      <div id="Published" class="tab-pane fade in active">
                       <table>
-                          <tr>
-                              <th>Plan Name</th>
-                              <th>Departure</th>
-                              <th>Destination</th>
-                              <th>Departure Time</th>
-                              <th>Release Time</th>
-                          </tr>
-                          
-                     </table>
+                      <tr>
+                      <th>Plan Image</th>
+                      <th>Plan Name</th>
+                      <th>Departure</th>
+                      <th>Destination</th>
+                      <th>Departure Time</th>
+                      <th>Arrive Time</th>
+                      </tr>
+                  @if(count($plan) > 0)    
+                      @foreach($plan as $plan)
+                      <tr>
+                      <td><a href="{{url ('/publishedPlan')}}"><img src="{{ $plan->plan_image}}" class="plan_pic" alt=""></a></td>
+                      <td><p class="lead"><a href="{{url ('/publishPlan')}}">{{ $plan->plan_name}}</a></p></td>
+                      <td><p class="lead">{{ $plan->departure_name}}</p></td>
+                      <td><p class="lead">{{ $plan->destination_name}}</p></td>
+                      <td><p class="lead">{{ $plan->departure_time}}</p></td>
+                      <td><p class="lead">{{ $plan->arrive_time}}</p></td>
+                      </tr>
+                      @endforeach
+                      </table>
+                  @else
+                  <p>No Plan avaiable</p>
+                  @endif
                    </div>
-                   <div id="Published" class="tab-pane fade">
+                   <div id="Attended" class="tab-pane fade">
                      <table>
                    <tr>
-                       <th>Plan Name</th>
-                       <th>Departure</th>
-                       <th>Destination</th>
-                       <th>Departure Time</th>
-                       <th>Release Time</th>
+                   <th>Plan Image</th>
+                   <th>Plan Name</th>
+                   <th>Departure</th>
+                   <th>Destination</th>
+                   <th>Departure Time</th>
+                   <th>Arrive Time</th>
                    </tr>
                    
                      </table>

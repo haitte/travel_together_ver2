@@ -1,3 +1,27 @@
+img {
+    display: block;
+    margin: 0 auto;
+}
+.img1{
+    border-radius:100%;
+    max-width: 100%;
+}
+.profile_pic{
+    border-radius:100%;
+    max-width:100px;
+    max-height:100px;
+}
+.plan_pic{
+    max-width:50px;
+    max-height:100px;
+}
+p {
+   text-align: center;
+}
+.lead{
+    font-size:100%;
+}
+
 .col-md-4{
    padding-top:100px;
  }
@@ -72,19 +96,20 @@
 }
 
 #content_right {
-   border-left: 1px solid #e1e1e1;
-   width: 850px;
-   height:500px;
-   float: right;
-   padding-top:20px;
-}
+    border-left: 1px solid #e1e1e1;
+    width: 800px;
+    height:500px;
+    float: right;
+    padding-top:20px;
+ }
 
-#content_left {
-   width: 100px;
-   height:500px;
-   float: left;
-   padding-top: 20px;
-}
+ #content_left {
+    width: 150px;
+    height:500px;
+    float: left;
+    padding-top: 20px;
+ }
+
 
  
 .mb-4,.my-4 {
@@ -239,11 +264,12 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 .ccontainer {
    width: 80%;
-   padding-right: 15px;
+   padding-right: 0px;
    padding-left: 15px;
    margin-right: auto;
-   margin-left: auto;
+   margin-left: 80px;
 }
+
 p {
    display: block;
    -webkit-margin-before: 1em;
@@ -266,3 +292,4 @@ p {
 
 
 .plan {display:none}
+
