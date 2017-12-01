@@ -68,7 +68,6 @@
                                 <button class="social-network twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</button>
                                 <button onclick="window.location.href='/google/auth'" class="social-network google"><i class="fa fa-google-plus" aria-hidden="true"></i>Google</button>
                             </div>
-                            <div class=" emptybox">
                             </div>
                           
                     </div>
