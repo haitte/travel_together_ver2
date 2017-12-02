@@ -11,6 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','IndexController@renderIndex');
+
+
+// Route::get('/signin', function () {
+//     return '<a href="/google/auth">Click here to login</a> ';
+// });
+
+
+Route::get('/{provider}/auth', 'Auth\LoginController@redirectToProvider');
+
+Route::get('/{provider}/handle', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/signin2', function () {
+    return view('signin');
 });
+Route::get('/home2', function () {
+    return view('index');
+});
+//->name('home')
+
+
+Auth::routes();
+
+Route::get('/home', 'IndexController@renderIndex');
+
+Route::resource('photos', 'PhotoController');
+// Route::resource('items','ItemsController');
