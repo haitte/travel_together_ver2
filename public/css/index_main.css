@@ -1,10 +1,10 @@
 
 body.critical #hero-banner {
     background-size: cover;
-    background-image: url(/images/Travel-Relationship.jpg);
+    background-image: url(/images/travel.jpg);
 }
 
-Travel-Relationship
+travel
 body, p, div {
     word-wrap: break-word;
 }
