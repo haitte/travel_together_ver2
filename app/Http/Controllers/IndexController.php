@@ -61,14 +61,16 @@ public function getLocationNames(Request $request){
 
     public function search(Request $request)
     {
-        $last_plans = DB::table('post_plans')
+        $search_location=$request->s_location;
+      //  $search_date=$request->s_date;
+        $search = DB::table('post_plans')
             ->join('users', 'users.id', '=', 'post_plans.user_id')
             ->join('locations', 'locations.id', '=', 'post_plans.location_id')
             ->select('post_plans.des', 'locations.location_name', 'locations.url', 'users.name', 'post_plans.updated_at')
-            ->orderBy('post_plans.updated_at', 'DESC')
+            ->where('location_name', 'LIKE', $search_location )
             ->paginate(12);
 
-        $html = view('layouts.partials.plans')->with(array('post_plan_info' => $last_plans))->render();
+        $html = view('layouts.partials.plans')->with(array('post_plan_info' => $search))->render();
         return response()->json(['success' => true, 'html' => $html]);
     }
 

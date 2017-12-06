@@ -67,8 +67,8 @@
                                 <button onclick="location.href='/travel_together_ver2/public/facebook/auth';" class="social-network facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</button>
                                 <button onclick="location.href='/travel_together_ver2/public/twitter/auth';" class="social-network twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</button>
                                 <button onclick="location.href='/travel_together_ver2/public/google/auth';" class="social-network google"><i class="fa fa-google-plus" aria-hidden="true"></i>Google</button>
-                               <button onclick="location.href='/travel_together_ver2/public/register';" class="social-network" style="color:tomato !important"><i aria-hidden="true" ></i>Register</button>
-                                <button onclick="location.href='/travel_together_ver2/public/home2';" class="social-network"><i aria-hidden="true"></i>Home</button>
+                                <button onclick="location.href='/travel_together_ver2/public/register';" class="social-network" style="color:tomato !important"><i aria-hidden="true" ></i>Register</button>
+                                <button onclick="location.href='/travel_together_ver2/public/home';" class="social-network"><i aria-hidden="true"></i>Home</button>
                             </div>
                           
                     </div>

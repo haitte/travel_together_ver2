@@ -16,8 +16,7 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="filter-bar _j_filter " style="top: 46px;">
                             <div class="filter-wrapper clearfix">
-                                <div class="row">
-                                <div id="dest_tim_get">
+                                <div class="row" style=" padding-left:5%; padding-right:5%">
                                 <div class="col-xs-6 col-sm-2 col-md-3">
                                 <div class="flr-place">
                                     <div class="ui-widget ui-input _j_go_mdd_list">
@@ -40,17 +39,16 @@
                                         <!-- <label class="btn btn-primary active">
                                             <input type="radio" name="options" id="option1" autocomplete="off" checked> Popular Plan 
                                         </label> -->
-                                        <button type="button" class="btn btn-secondary btn-sm" id="getRequest">Latest Plan</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" id="getRequest" style="color:tomato">Latest Plan</button>
                                     </div>
                                 </div>
                                 <div class=" col-xs-2 col-sm-2 col-md-3">
-                                    <button style="margin-right:3%; margin-left:1%" class="btn btn-secondary btn-sm" id="plansearch">
+                                    <button style="margin-right:3%; margin-left:1%; border-color:tomato; color:tomato " class="btn btn-secondary btn-sm" id="plansearch">
                                         Search
                                     </button>
-                                    <button class="btn btn-default " id="addplan" onclick="location.href='/signin';">
+                                    <button class="btn btn-default " id="addplan"style="background-color:tomato; color:white">
                                         <img src="images/brand/cross-plus.png" width="14px";height="14px"; />my plan
-                                    </button>   
-                                </div>                  
+                                    </button>                    
                                 </div>    
                                 </div>
                             </div> 
