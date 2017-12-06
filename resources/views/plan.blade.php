@@ -1,7 +1,20 @@
 @extends('layouts.headerapp')
 
-@section('content')
-<div class="container">
+@section('header')
+
+    <div class="pageheader fixed-demo dark">
+        <!-- agoda -->
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(/images/plan.jpg);background-color: #aaa">
+            <div class="container-agoda">
+            <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">Create your own plan</h1>                 
+            </div>
+        </div>    
+    </div>
+
+    <div class="clearfix"></div>
+
+@yield('content')
+<div class="container" style="margin-top:50px;>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
                 @if(count($errors)>0)
@@ -148,4 +161,15 @@
         </div>
     </div>
 </div>
+<div class="clearfix"></div>
+
+@yield('footer')
+    <!-- Start Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>    
+    <!-- End Footer -->
 @endsection
