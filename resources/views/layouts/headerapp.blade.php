@@ -195,53 +195,19 @@
     
 	<!-- START JAVASCRIPT -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
     <script src="{{asset('js/jquery-ui.min.js')}}"></script>
-    
+    <script type="text/javascript" src="js/datepicker.js"></script>  
+    <script type="text/javascript" src="js/index.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery.js"></script>     -->
     <script type="text/javascript">
-        $(function() {
-            $( "#datepicker" ).datepicker({
-                minDate: -20,
-                changeMonth: true,
-                changeYear: true
-            });
-        });
-
-        $( function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( ".tags" ).autocomplete({
-      source: availableTags
-    });
-  } );
-   </script>
+       
+        
+   </script>   
     
     <!-- Bootsnavs -->
     <script src="js/bootsnav.js"></script>
-    <script src="js/index_main.js"></script>
 
 </body>
 </html>
