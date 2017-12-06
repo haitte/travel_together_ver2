@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +13,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','IndexController@renderIndex');
+
+Route::post('/', 'IndexController@search');
+
+Route::get('/{provider}/auth', 'Auth\LoginController@redirectToProvider');
+
+Route::get('/{provider}/handle', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/signin', function () {
+    return view('signin');
 });
 
 Auth::routes();
@@ -31,3 +41,8 @@ Route::post('/addPlan', 'PlanController@addPlan');
 
 //Route::get('/comment', 'CommentController@index')->name('comment');
 Route::post('/addComment', 'CommentController@addComment');
+Route::get('/home', 'IndexController@renderIndex');
+Route::get('/home/getmsg', 'IndexController@getLocationNames');
+Route::post('/home', 'IndexController@getLastPlans');
+
+Route::resource('photos', 'PhotoController');

@@ -27,4 +27,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+
+    public function socialProfile()
+    {
+        return $this->hasOne(SocialLoginProfile::class);
+    }
+
+        public function PostPlan()
+    {
+        return $this->hasMany(PostPlan::class);
+    }
+
 }
