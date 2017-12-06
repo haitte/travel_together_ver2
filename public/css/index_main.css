@@ -4,7 +4,7 @@ body.critical #hero-banner {
     background-image: url(city-wallpaper-11.jpg);
 }
 body, p, div {
-
+  
     word-wrap: break-word;
 }
 #hero-banner>.container-agoda {
@@ -210,6 +210,7 @@ input{
     width: 14px;
     height: 14px;
     z-index: 9;
+
     background: url(images/brand/cross-plus.png) no-repeat 0 0;
     overflow: hidden;
 }
@@ -310,7 +311,4 @@ ul, menu, dir {
 .filter-bar .sort .on {
     border-color: tomato;
 }
-
-/* for post plan text */
-
 
