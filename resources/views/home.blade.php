@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.headerapp')
 <style type="text/css">
     .img1{
         border-radius:100%;
@@ -34,7 +34,7 @@
                 <div class="panel-heading">
                     <div class="col-md-4">Dashboard</div>
                   </div>  
-                
+ <!--               
                 <div class="panel-body">
                     
                 <div class="col-md-4">
@@ -156,7 +156,7 @@
                     <p>No post Avai</p>
                     @endif
         </div>
-
+-->
                 </div>
             </div>
         </div>

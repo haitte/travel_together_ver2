@@ -143,11 +143,11 @@
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <li><a href="#">Home</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Dropdowns</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Edit</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Custom Menu</a></li>
+                            <li><a href="{{url ('/profile')}}">Edit Profile</a></li>
                             <li class="dropdown"></li>
-                            <li><a href="#">Custom Menu</a></li>
+                            <li><a href="{{url ('/plan')}}">Edit Plan</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url ('/userProfile')}}">My Profile</a></li>
