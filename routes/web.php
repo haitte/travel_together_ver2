@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +15,7 @@
 
 Route::get('/','IndexController@renderIndex');
 
-
+Route::post('/', 'IndexController@search');
 // Route::get('/signin', function () {
 //     return '<a href="/google/auth">Click here to login</a> ';
 // });
@@ -23,18 +25,19 @@ Route::get('/{provider}/auth', 'Auth\LoginController@redirectToProvider');
 
 Route::get('/{provider}/handle', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/signin2', function () {
+Route::get('/signin', function () {
     return view('signin');
 });
-Route::get('/home2', function () {
-    return view('index');
-});
+// Route::get('/home', function () {
+//     return view('index');
+// });
 //->name('home')
 
 
 Auth::routes();
 
 Route::get('/home', 'IndexController@renderIndex');
+Route::get('/home/getmsg', 'IndexController@getLocationNames');
+Route::post('/home', 'IndexController@getLastPlans');
 
 Route::resource('photos', 'PhotoController');
-// Route::resource('items','ItemsController');
