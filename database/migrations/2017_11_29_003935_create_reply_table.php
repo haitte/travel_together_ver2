@@ -17,7 +17,7 @@ class CreateReplyTable extends Migration
             $table->increments('id');
             $table->integer('users_id');
             $table->integer('plan_id'); 
-            $table->string('comment');
+            $table->string('reply');
             $table->timestamps();
         });
     }

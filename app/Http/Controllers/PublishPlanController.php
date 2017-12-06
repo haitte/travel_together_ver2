@@ -8,6 +8,7 @@ use App\Profile;
 use App\user;
 use App\Plan;
 use App\Comment;
+use App\Reply;
 use Auth;
 
 class PublishPlanController extends Controller
@@ -43,17 +44,24 @@ class PublishPlanController extends Controller
                     ->where(['plans.users_id'=>$users_id])
                     ->first();  
 
-        $comments = DB::table('users')
+        $comment = DB::table('users')
                     ->join('comments', 'users.id', '=', 'comments.users_id')
                     ->select('users.*','comments.*')
                     ->where(['comments.users_id'=>$users_id])
                     ->get(); 
-                                
-        $comment= Comment::paginate(10);     
+
+        $reply = DB::table('users')
+                    ->join('replys', 'users.id', '=', 'replys.users_id')
+                    ->select('users.*','replys.*')
+                    ->where(['replys.users_id'=>$users_id])
+                    ->get();
+                          
+        //$comment= Comment::paginate(10);     
                     
-        $plan= Plan::paginate(10);     
+        //$plan= Plan::paginate(10);  
+        
             
-        return view('publishPlan',['profile' => $profile,'plan' => $plan,'comment'=>$comment]);
+        return view('publishPlan',['profile' => $profile,'plan' => $plan,'comment'=>$comment,'reply'=>$reply]);
     }
 
 }
