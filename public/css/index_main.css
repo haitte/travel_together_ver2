@@ -1,19 +1,11 @@
 
 body.critical #hero-banner {
     background-size: cover;
-<<<<<<< HEAD
-}
-
-
-
-=======
-    background-image: url(city-wallpaper-11.jpg);
 }
 body, p, div {
   
     word-wrap: break-word;
 }
->>>>>>> 49f9a35f255adf0d184cb6353d29c21437784d33
 #hero-banner>.container-agoda {
     padding-bottom:10%;
     padding-top: 28%;
