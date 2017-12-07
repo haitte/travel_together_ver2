@@ -1,13 +1,9 @@
 
 body.critical #hero-banner {
     background-size: cover;
-    background-image: url(/images/travel.jpg);
 }
 
-travel
-body, p, div {
-    word-wrap: break-word;
-}
+
 
 #hero-banner>.container-agoda {
     padding-bottom:10%;

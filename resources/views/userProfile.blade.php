@@ -8,7 +8,7 @@
 
     <div class="pageheader fixed-demo dark">
         <!-- agoda -->
-        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-color: #aaa">
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(/images/map.jpg);background-color: #aaa">
             <div class="container-agoda"> 
             <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">Manage your Plan</h1>                 
             </div>
