@@ -1,0 +1,31 @@
+global:
+  env:
+    - APP_ENV: production
+    - APP_DEBUG: true
+    - APP_KEY: SomeRandomString
+    - DB_HOST: 'MAP:DATABASE1_HOST'
+    - DB_DATABASE: 'MAP:DATABASE1_NAME'
+    - DB_USERNAME: 'MAP:DATABASE1_USER'
+    - DB_PASSWORD: 'MAP:DATABASE1_PASS'
+web1:
+  name: travel-together
+  shared_writable_dirs:
+    - /storage/cache
+    - /storage/database
+    - /storage/logs
+    - /storage/sessions
+    - /storage/views
+    - /storage/work
+  document_root: /public
+  php_version: 7.0.0
+  before_deploy:
+    - "php artisan migrate:install"
+    - "php artisan migrate"
+  after_deploy:
+    - "rm -f storage/cache/*"
+    - "rm -f storage/views/*"
+  
+database1:
+  name: posts
+  type: mysql
+  topology: redundant
