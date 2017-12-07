@@ -47,7 +47,7 @@
                                         Search
                                     </button>
                                     <button class="btn btn-default " id="addplan"style="background-color:tomato; color:white">
-                                        <img src="images/brand/cross-plus.png" width="14px";height="14px"; />my plan
+                                        <a href="{{ url('/plan') }}" style="text-decoration:none; color:white"><img src="images/brand/cross-plus.png" width="14px";height="14px"; />my plan</a>
                                     </button>                    
                                 </div>    
                                 </div>

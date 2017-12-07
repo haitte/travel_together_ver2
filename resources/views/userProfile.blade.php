@@ -82,7 +82,7 @@
                   @if(count($plan) > 0)    
                       @foreach($plan as $plan)
                       <tr>
-                      <td><a href="{{url ('/publishedPlan')}}"><img src="{{ $plan->plan_image}}" class="plan_pic" alt=""></a></td>
+                      <td><a href="{{url ('/publishPlan')}}"><img src="{{ $plan->plan_image}}" class="plan_pic" alt=""></a></td>
                       <td><p class="lead"><a href="{{url ('/publishPlan')}}">{{ $plan->plan_name}}</a></p></td>
                       <td><p class="lead">{{ $plan->departure_name}}</p></td>
                       <td><p class="lead">{{ $plan->destination_name}}</p></td>
