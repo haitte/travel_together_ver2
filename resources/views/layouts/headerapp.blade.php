@@ -86,11 +86,9 @@
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href="css/animate.css" rel="stylesheet">
     <link href="css/bootsnav.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/index_main.css" rel="stylesheet">
-    <link href="css/index_main2.css" rel="stylesheet">
     <link href="css/UserProfile.css" rel="stylesheet" type="text/css">
     <link href="css/PublishPlan.css" rel="stylesheet" type="text/css">
     <link href="css/app.css" rel="stylesheet" type="text/css">
@@ -142,7 +140,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
                     <li class="dropdown">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Edit</a>

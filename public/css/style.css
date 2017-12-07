@@ -10,7 +10,7 @@ html,body {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif !important;
     position: relative;
     font-size:14px;
     line-height:24px;

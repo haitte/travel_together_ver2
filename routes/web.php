@@ -38,11 +38,10 @@ Route::get('/comment', 'CommentController@comment');
 Route::post('/addProfile', 'ProfileController@addProfile');
 Route::post('/addPlan', 'PlanController@addPlan');
 
-
-//Route::get('/comment', 'CommentController@index')->name('comment');
 Route::post('/addComment', 'CommentController@addComment');
 Route::get('/home', 'IndexController@renderIndex');
 Route::get('/home/getmsg', 'IndexController@getLocationNames');
 Route::post('/home', 'IndexController@getLastPlans');
+// Route::get('/home/display/{id}', 'IndexController@getDisplay');
 
 Route::resource('photos', 'PhotoController');

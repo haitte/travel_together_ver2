@@ -18,12 +18,16 @@ class IndexController extends Controller
    $post_plans_with_locations_and_users=  DB::table('post_plans')
             ->join('users', 'users.id', '=', 'post_plans.user_id')
             ->join('locations', 'locations.id', '=', 'post_plans.location_id')
-            ->select('post_plans.des', 'locations.location_name', 'locations.url', 'users.name')
+            ->select('post_plans.des', 'locations.location_name', 'locations.url', 'users.name', 'post_plans.id')
             ->paginate(12);
 
-        $recom_info = DB::table('locations')
-            ->select('location_name', 'url')
-            ->paginate(3);
+        // $recom_info = DB::table('locations')
+        //     ->select('location_name', 'url')
+        //     ->paginate(3);
+        $recom_info= location::orderByRaw('RAND()')
+        ->select('location_name', 'url')
+        ->take(6)
+        ->get();
 
     return view('index')->with(array('post_plan_info'=>$post_plans_with_locations_and_users,'recom_info'=>$recom_info));
 
@@ -73,5 +77,16 @@ public function getLocationNames(Request $request){
         $html = view('layouts.partials.plans')->with(array('post_plan_info' => $search))->render();
         return response()->json(['success' => true, 'html' => $html]);
     }
+
+    // public function getDisplay($id)
+    // {
+    //     $getId = DB::table('post_plans')
+    //         ->select('post_plans.id')
+    //             find($id);
+
+    //     return view('/plan~~~')->withProject($project);
+
+    // }
+
 
 }
