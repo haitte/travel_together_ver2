@@ -7,7 +7,7 @@
 @section('header')
     <div class="pageheader fixed-demo dark">
         <!-- agoda -->
-        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-color: #aaa">
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-color: #aaa; background-image: url(css/city-wallpaper-11.jpg);">
             <div class="container-agoda">
                 <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">feel the world</h1>
                 <h2 id="hero-banner-header2" class=" fade-in " data-selenium="hero-banner-h2">enjoy your holiday with great people</h2>
@@ -39,7 +39,7 @@
                                         <!-- <label class="btn btn-primary active">
                                             <input type="radio" name="options" id="option1" autocomplete="off" checked> Popular Plan 
                                         </label> -->
-                                        <button type="button" class="btn btn-secondary btn-sm" id="getRequest" style="color:tomato">Latest Plan</button>
+                                        <button type="button" class="btn btn-secondary" id="getRequest" style="color: #ddd;background-color: tomato;">Latest Plan</button>
                                     </div>
                                 </div>
                                 <div class=" col-xs-2 col-sm-2 col-md-3">
@@ -67,22 +67,32 @@
 
             </div>
              <!-- show user plan -->
-             <div class="post_plan_main" id="post_plans">
+             <div class="post_plan_main" id="post_plans" style="background-color:rgba(0,0,0,.075)">
                 @include('layouts.partials.plans')
              </div>
             <!-- show recommended plan -->
+            
             <h3> Destinations you will love</h3>
+            <div style=" margin-top:5%; margin-botton:2%" class="row">
             @foreach($recom_info as $location_plan)
                         <div class="col-xs-12 col-sm-4 post_clo" >
                                 <img src="{{$location_plan->url}}" alt="{{$location_plan->location_name}}" >
                                 <div class="_1iddsry">{{$location_plan->location_name}}</div>                               
                         </div>
             @endforeach
-              
+            </div> 
                 
            </div>
         </div>
     </div>
+@yield('footer')
+    <!-- Start Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Travel Together</p>
+      </div>
+      <!-- /.container -->
+    </footer>    
+    <!-- End Footer -->
 @endsection
-
 

@@ -1,7 +1,6 @@
 
 body.critical #hero-banner {
     background-size: cover;
-    background-image: url(city-wallpaper-11.jpg);
 }
 body, p, div {
   
@@ -231,7 +230,7 @@ input{
     line-height: 1.1;
 }
 #hero-banner h1 {
-    font-size: 43px;
+    font-size: 53px !important;
 }
 h1 {
     display: block;
