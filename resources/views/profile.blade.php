@@ -4,7 +4,7 @@
 
     <div class="pageheader fixed-demo dark">
         <!-- agoda -->
-        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(/images/profile.jpeg);background-color: #aaa">
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(images/profile.jpeg);background-color: #aaa">
             <div class="container-agoda">
             <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">Edit your profile</h1>                 
             </div>
