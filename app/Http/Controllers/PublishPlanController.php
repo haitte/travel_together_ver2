@@ -33,14 +33,7 @@ class PublishPlanController extends Controller
         $users_id = Auth::user()->id;
 
         $user_profile = User::find($users_id)->profile;
-                    
-        // $plan = DB::table('users')
-        //             ->join('plans','users_id', '=','plans.users_id')
-        //             ->select('users.*','plans.*')
-        //             ->where(['plans.users_id'=>$users_id])
-        //             ->first();  
-
-
+                     
         $plan = Plan::find($plan_id);
 
         $comment = DB::table('users')
