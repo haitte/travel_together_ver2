@@ -2,12 +2,12 @@
 
 @section('content')
  @if(!Auth::guest())
-    @if(Auth::user()->id == $my_trip->user_id)
+    @if(Auth::user()->id == $my_trip->users_id)
         <h1>Congratulations {{$me->name}}! You have matched with</h1>
         @if(!Auth::guest())
             @foreach($trips as $trip)
-                @if( $trip -> destination == $my_trip -> destination )
-                    @if(($my_trip->start_date) <= ($trip->end_date)) 
+                @if( $trip -> destination_name == $my_trip -> destination_name )
+                    @if(($my_trip->departure_time) <= ($trip->arrive_time)) 
                         <div class="well">
                         <h1>{{$trip->user->name}}</h1>
                         </div>

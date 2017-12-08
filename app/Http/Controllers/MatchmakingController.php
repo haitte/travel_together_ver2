@@ -47,13 +47,13 @@ class MatchmakingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($trip_id)
+    public function show($id)
     {
         //
         
-        $my_trip = Trip::find($trip_id);
+        $my_trip = Trip::find($id);
         
-        $trips = Trip::where('trip_id', '!=', $trip_id)->get();
+        $trips = Trip::where('id', '!=', $id)->get();
 
         
         $data=array(

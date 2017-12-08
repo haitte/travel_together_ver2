@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Trip;
+use App\User;
 
 
 class TripsController extends Controller
@@ -15,7 +16,7 @@ class TripsController extends Controller
      */
     public function index()
     {
-        $trips= Trip::orderBy('trip_id','desc')->paginate(5);
+        $trips= Trip::orderBy('id','desc')->paginate(5);
         
         return view('trips.index')->with('trips',$trips);
     }
@@ -45,10 +46,10 @@ class TripsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $trip_id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($trip_id)
+    public function show($id)
     {
         //
         
@@ -57,10 +58,10 @@ class TripsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $trip_id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($trip_id)
+    public function edit($id)
     {
         //
     }
@@ -72,7 +73,7 @@ class TripsController extends Controller
      * @param  int  $trip_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $trip_id)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,12 +81,12 @@ class TripsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $trip_id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($trip_id)
+    public function destroy($id)
     {
-        $trip = Trip::find($trip_id);
+        $trip = Trip::find($id);
         $trip->delete();
         
         return redirect('/trips')->with('success','Trip deleted.');

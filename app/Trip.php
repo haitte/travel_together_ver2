@@ -3,20 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Trip extends Model
 {
     //Table name
-    protected $table ='trips';
+    protected $table ='plans';
     
     //Primary Key
-    public $primaryKey ='trip_id';
+    public $primaryKey ='id';
     
     //Timestamps
     public $timestamps = true;
     
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','users_id');
     }
     
     public function survey(){

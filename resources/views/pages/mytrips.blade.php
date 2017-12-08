@@ -8,18 +8,16 @@
                 <div class="container"> 
                     <div class="row">
                         <div class="col-sm-8">
-                            <h3>{{$trip->destination}}</h3> 
-                            <small><i>{{$trip->start_date}} to {{$trip->end_date}}</i></small> <br />
-                            @if(!Auth::guest())
-                                @if(Auth::user()->id == $trip->user_id)
-                                    <a href="/similarity/{{$trip->trip_id}}">View my similarities</a>
-                                @endif
-                            @endif
+                            <h3>{{$trip->destination_name}}</h3>
+                            <small><i>{{$trip->departure_time}} to {{$trip->arrive_time}}</i></small> <br />
+            
+                                    <a href="/similarity/{{$trip->id}}">View my similarities</a>
+                        
                         </div>
                         
                         <div class="col-sm-4">
                             <div style="width:150px">
-                            {!! Form::open(['action' => ['TripsController@destroy',$trip->trip_id],'method' => 'POST']) !!}
+                            {!! Form::open(['action' => ['TripsController@destroy',$trip->id],'method' => 'POST']) !!}
                                 {{Form::hidden('_method','DELETE')}}
                                 {{Form::submit('Delete Trip', ['class' => 'btn btn-danger btn-block'])}}
                             {!! Form::close()!!}

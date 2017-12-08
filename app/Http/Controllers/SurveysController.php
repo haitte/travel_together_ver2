@@ -154,8 +154,8 @@ class SurveysController extends Controller
     public function mytrips(){
         
         $user_id = auth()->user()->id;
-        $user = User::find($user_id);
-
-        return view('pages.mytrips')->with('trips', $user->trips);
+        $trips= Trip::where('users_id', '=', $user_id)->get();
+        
+        return view('pages.mytrips')->with('trips',$trips);
     }
 }
