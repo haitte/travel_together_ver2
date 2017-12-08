@@ -79,18 +79,6 @@
   </style>
 
   <!-- css file -->
-<<<<<<< HEAD
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href="/css/bootsnav.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/index_main.css" rel="stylesheet">
-    <link href="/css/UserProfile.css" rel="stylesheet" type="text/css">
-    <link href="/css/PublishPlan.css" rel="stylesheet" type="text/css">
-    <link href="/css/app.css" rel="stylesheet" type="text/css">
-=======
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
@@ -102,7 +90,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/PublishPlan.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />  
 
->>>>>>> e9067c00fa3aa6d81d5a82baef0b3e41609f2ba3
 
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
