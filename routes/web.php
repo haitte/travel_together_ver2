@@ -16,10 +16,6 @@
 Route::get('/','IndexController@renderIndex');
 
 Route::post('/', 'IndexController@search');
-// Route::get('/signin', function () {
-//     return '<a href="/google/auth">Click here to login</a> ';
-// });
-
 
 Route::get('/{provider}/auth', 'Auth\LoginController@redirectToProvider');
 
@@ -28,13 +24,23 @@ Route::get('/{provider}/handle', 'Auth\LoginController@handleProviderCallback');
 Route::get('/signin', function () {
     return view('signin');
 });
-// Route::get('/home', function () {
-//     return view('index');
-// });
-//->name('home')
-
 
 Auth::routes();
+
+Route::get('/homePlan', 'HomePlanController@index')->name('homePlan');
+Route::get('/publishPlan', 'PublishPlanController@index')->name('publishPlan');
+Route::get('/userProfile', 'UserProfileController@index')->name('userProfile');
+
+Route::get('/profile', 'ProfileController@profile');
+Route::get('/plan', 'PlanController@plan');
+Route::get('/comment', 'CommentController@comment');
+Route::get('/signup', 'SignUpController@signup');
+
+Route::post('/addProfile', 'ProfileController@addProfile');
+Route::post('/addPlan', 'PlanController@addPlan');
+Route::post('/addComment', 'CommentController@addComment');
+Route::post('/addSignUp', 'SignUpController@addSignUp');
+
 
 Route::get('/home', 'IndexController@renderIndex');
 Route::get('/home/getmsg', 'IndexController@getLocationNames');

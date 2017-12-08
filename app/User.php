@@ -27,6 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     public function socialProfile()
     {
         return $this->hasOne(SocialLoginProfile::class);
@@ -37,5 +38,4 @@ class User extends Authenticatable
         return $this->hasMany(PostPlan::class);
     }
 
-    
 }

@@ -15,8 +15,6 @@ $(document).ready(function(){
     $('#plansearch').click(function () {
         var search_location = $('#_j_together_mdd_search').val(); 
         var search_date = $('#datepicker').val();
-
-        console.log(search_location + " " + search_date);
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
