@@ -4,7 +4,7 @@
 
     <div class="pageheader fixed-demo dark">
         <!-- agoda -->
-        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(/images/plan.jpg);background-color: #aaa">
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(images/plan.jpg);background-color: #aaa">
             <div class="container-agoda">
             <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">Create your own plan</h1>                 
             </div>
@@ -63,17 +63,23 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('departure_time') ? ' has-error' : '' }}">
-                            <label for="departure_time" class="col-md-4 control-label">Enter Departure Time</label>
+                        <label for="departure_time" class="col-md-4 control-label">Enter Departure Time</label>
 
-                            <div class="col-md-6">
-                                <input id="departure_time" type="" class="form-control" name="departure_time" placeholder="yyyy/mm/dd" required>
-                                @if ($errors->has('departure_time'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('departure_time') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="col-md-6">
+                            <div class="flr-date _j_time_tpl">
+                                    <div class="ui-input">
+                            <input id="from" type="" class="form-control" name="departure_time" placeholder="yyyy/mm/dd" required>
+                            <i class="icon-date _j_date"></i>
+                                 <input type="text" value="" readonly="readonly" id="together_datepicker" style="width: 30px; height: 30px; border: none; padding: 0; margin: 0;position: absolute;left: 225px;top: 0;opacity: 0">
+                                </div>
                             </div>
+                            @if ($errors->has('departure_time'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('departure_time') }}</strong>
+                                </span>
+                            @endif
                         </div>
+                    </div>
 
                         <div class="form-group{{ $errors->has('destination_name') ? ' has-error' : '' }}">
                             <label for="destination_name" class="col-md-4 control-label">Enter Destination Name</label>
@@ -90,18 +96,23 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('arrive_time') ? ' has-error' : '' }}">
-                            <label for="arrive_time" class="col-md-4 control-label">Enter Arrive Time</label>
+                        <label for="to" class="col-md-4 control-label">Enter Arrive Time</label>
 
-                            <div class="col-md-6">
-                                <input id="arrive_time" type="" class="form-control" name="arrive_time" placeholder="yyyy/mm/dd" required>
-
-                                @if ($errors->has('arrive_time'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('arrive_time') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="col-md-6">
+                             <div class="flr-date _j_time_tpl">
+                                    <div class="ui-input">
+                            <input id="to" type="" class="form-control" name="arrive_time" placeholder="yyyy/mm/dd" required>
+                             <i class="icon-date _j_date"></i>
+                                        <input type="text" value="" readonly="readonly" id="together_datepicker" style="width: 30px; height: 30px; border: none; padding: 0; margin: 0;position: absolute;left: 225px;top: 0;opacity: 0">
+                                </div>
+                                </div>
+                            @if ($errors->has('arrive_time'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('arrive_time') }}</strong>
+                                </span>
+                            @endif
                         </div>
+                    </div>
 
                         <div class="form-group{{ $errors->has('group_num') ? ' has-error' : '' }}">
                             <label for="group_num" class="col-md-4 control-label">Enter Number of people</label>

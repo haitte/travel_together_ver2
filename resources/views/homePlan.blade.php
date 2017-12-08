@@ -82,8 +82,117 @@
              </div>
           
  <div style="clear:both;"></div>
-          
 
+ <div class="signup">
+        <div class="card my-4">
+                @if(count($errors)>0)
+                    @foreach($errors->all() as $error)
+                    <div class="alert alert-danger">{{$error}}</div>
+                    @endforeach
+                @endif
+                
+                @if(session('response'))
+                    <div class="alert alert-success">{{session('response')}}</div>
+                @endif
+            <div class="panel panel-default">
+                
+                <div class="panel-heading"><center>Join In Form</center></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="POST" action="{{ url('/addSignUp') }}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label for="username" class="col-md-4 control-label">User Name :</label>
+
+                            <div class="col-md-6">
+                                <input id="username" type="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+
+                                @if ($errors->has('username'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('contact_num') ? ' has-error' : '' }}">
+                            <label for="contact_num" class="col-md-4 control-label">Contact Number :</label>
+
+                            <div class="col-md-6">
+                                <input id="contact_num" type="contact_num" class="form-control" name="contact_num" value="{{ old('contact_num') }}" required autofocus>
+
+                                @if ($errors->has('contact_num'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('contact_num') }}</strong>
+                                    </span>
+                                @endif
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
+                            <label for="date_of_birth" class="col-md-4 control-label">Date of Birth :</label>
+
+                            <div class="col-md-6">
+                                <input id="date_of_birth" type="" class="form-control" name="date_of_birth" placeholder="yyyy/mm/dd" required>
+                                @if ($errors->has('date_of_birth'))
+                                      <span class="help-block">
+                                        <strong>{{ $errors->first('date_of_birth') }}</strong>
+                                     </span>
+                               @endif
+                        </div>
+                    </div>
+
+
+                        <div class="form-group{{ $errors->has('male_num') ? ' has-error' : '' }}">
+                            <label for="male_num" class="col-md-4 control-label">Enter Number of people : </label>
+
+                            <div class="col-md-6">
+                                <input id="male_num" type="" class="form-control" name="male_num" required>Male
+                                @if ($errors->has('male_num'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('male_num') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('female_num') ? ' has-error' : '' }}">
+                        <label for="female_num" class="col-md-4 control-label"></label>
+                            <div class="col-md-6">
+                                <input id="female_num" type="" class="form-control" name="female_num" required>Female
+                                @if ($errors->has('female_num'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('female_num') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                            <script>
+                               $(document).ready(function(){
+                               $("button").click(function(){
+                               alert("Successfully!");
+                             });
+                            });
+                            </script>
+                                <button type="submit" class="btn btn-primary" style="background-color:#f43438">
+                                    Sign up
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <div style="clear:both;"></div>
           <!-- Comments Form -->
           <div class="card my-4">
           @if(count($errors)>0)

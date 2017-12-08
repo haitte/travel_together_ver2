@@ -10,7 +10,7 @@ use App\Plan;
 use App\Comment;
 use Auth;
 
-class PublishPlanController extends Controller
+class HomePlanController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -48,14 +48,13 @@ class PublishPlanController extends Controller
                     ->select('users.*','comments.*')
                     ->where(['comments.users_id'=>$users_id])
                     ->get(); 
-
                           
         //$comment= Comment::paginate(10);     
                     
         //$plan= Plan::paginate(10);  
         
             
-        return view('publishPlan',['profile' => $profile,'plan' => $plan,'comment'=>$comment]);
+        return view('homePlan',['profile' => $profile,'plan' => $plan,'comment'=>$comment]);
     }
 
 }

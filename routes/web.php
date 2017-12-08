@@ -27,20 +27,21 @@ Route::get('/signin', function () {
 
 Auth::routes();
 
-
+Route::get('/homePlan', 'HomePlanController@index')->name('homePlan');
 Route::get('/publishPlan', 'PublishPlanController@index')->name('publishPlan');
 Route::get('/userProfile', 'UserProfileController@index')->name('userProfile');
 
 Route::get('/profile', 'ProfileController@profile');
 Route::get('/plan', 'PlanController@plan');
 Route::get('/comment', 'CommentController@comment');
+Route::get('/signup', 'SignUpController@signup');
 
 Route::post('/addProfile', 'ProfileController@addProfile');
 Route::post('/addPlan', 'PlanController@addPlan');
-
-
-//Route::get('/comment', 'CommentController@index')->name('comment');
 Route::post('/addComment', 'CommentController@addComment');
+Route::post('/addSignUp', 'SignUpController@addSignUp');
+
+
 Route::get('/home', 'IndexController@renderIndex');
 Route::get('/home/getmsg', 'IndexController@getLocationNames');
 Route::post('/home', 'IndexController@getLastPlans');
