@@ -15,7 +15,8 @@ class CreatePlanTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('users_id');
+            $table->integer('user_id')->unsigned()
+                ->references('id')->on('users');
             $table->string('plan_name');
             $table->string('plan_image');
             $table->text('description');

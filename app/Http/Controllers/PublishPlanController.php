@@ -28,21 +28,20 @@ class PublishPlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($plan_id)
     {
         $users_id = Auth::user()->id;
 
-        $profile = DB::table('users')
-                    ->join('profiles','users_id', '=','profiles.users_id')
-                    ->select('users.*','profiles.*')
-                    ->where(['profiles.users_id'=>$users_id])
-                    ->first();
+        $user_profile = User::find($users_id)->profile;
                     
-        $plan = DB::table('users')
-                    ->join('plans','users_id', '=','plans.users_id')
-                    ->select('users.*','plans.*')
-                    ->where(['plans.users_id'=>$users_id])
-                    ->first();  
+        // $plan = DB::table('users')
+        //             ->join('plans','users_id', '=','plans.users_id')
+        //             ->select('users.*','plans.*')
+        //             ->where(['plans.users_id'=>$users_id])
+        //             ->first();  
+
+
+        $plan = Plan::find($plan_id);
 
         $comment = DB::table('users')
                     ->join('comments', 'users.id', '=', 'comments.users_id')
@@ -50,18 +49,18 @@ class PublishPlanController extends Controller
                     ->where(['comments.users_id'=>$users_id])
                     ->get(); 
 
-        $reply = DB::table('users')
-                    ->join('replys', 'users.id', '=', 'replys.users_id')
-                    ->select('users.*','replys.*')
-                    ->where(['replys.users_id'=>$users_id])
-                    ->get();
+        // $reply = DB::table('users')
+        //             ->join('replys', 'users.id', '=', 'replys.users_id')
+        //             ->select('users.*','replys.*')
+        //             ->where(['replys.users_id'=>$users_id])
+        //             ->get();
                           
         //$comment= Comment::paginate(10);     
                     
         //$plan= Plan::paginate(10);  
         
             
-        return view('publishPlan',['profile' => $profile,'plan' => $plan,'comment'=>$comment,'reply'=>$reply]);
+        return view('publishPlan',['user' => $user_profile,'plan' => $plan,'comment'=>null,'reply'=>null]);
     }
 
 }

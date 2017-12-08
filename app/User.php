@@ -32,9 +32,15 @@ class User extends Authenticatable
         return $this->hasOne(SocialLoginProfile::class);
     }
 
-        public function PostPlan()
+    public function plans()
     {
-        return $this->hasMany(PostPlan::class);
+        return $this->hasMany(Plan::class);
     }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
 
 }

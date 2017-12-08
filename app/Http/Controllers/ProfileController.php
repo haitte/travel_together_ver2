@@ -27,7 +27,7 @@ class ProfileController extends Controller
             ]);
             
         $profiles = new Profile;
-        $profiles->users_id=Auth::user()->id;
+        $profiles->user_id=Auth::user()->id;
         $profiles->name = $request->input('name');
         $profiles->age = $request->input('age');
         $profiles->gender = $request->input('gender');

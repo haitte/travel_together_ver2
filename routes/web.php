@@ -28,7 +28,7 @@ Route::get('/signin', function () {
 Auth::routes();
 
 
-Route::get('/publishPlan', 'PublishPlanController@index')->name('publishPlan');
+Route::get('/publishPlan/{plan_id}', 'PublishPlanController@index');
 Route::get('/userProfile', 'UserProfileController@index')->name('userProfile');
 
 Route::get('/profile', 'ProfileController@profile');

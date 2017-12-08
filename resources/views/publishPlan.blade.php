@@ -29,32 +29,32 @@
 
              <div id="container_user"> 
                 <div id=content_left class=cr_offset1>
-                @if(!empty($profile))
-                <img src="{{ $profile->profile_pic  }}" class="profile_pic" alt="">
+                @if(!empty($user))
+                <img src="{{ $user->profile_pic  }}" class="profile_pic" alt="">
                @else
                <img src="{{ url('images/img1.jpg') }}" class="img1" alt="">
                @endif
                 
-                @if(!empty($profile))
-                   <p class="lead">{{ $profile->name}}</p>
+                @if(!empty($user))
+                   <p class="lead">{{ $user->name}}</p>
                 @else
                 <p></p>
                 @endif
 
-             @if(!empty($profile))
-                <p class="lead">Age: {{ $profile->age}}</p>
+             @if(!empty($user))
+                <p class="lead">Age: {{ $user->age}}</p>
              @else
              <p></p>
              @endif
 
-             @if(!empty($profile))
-                <p class="lead">Gender: {{ $profile->gender}}</p>
+             @if(!empty($user))
+                <p class="lead">Gender: {{ $user->gender}}</p>
              @else
              <p></p>
              @endif
 
-             @if(!empty($profile))
-                  <p class="lead">Resident: {{ $profile->country}}</p>
+             @if(!empty($user))
+                  <p class="lead">Resident: {{ $user->country}}</p>
              @else
               <p></p>
              @endif
