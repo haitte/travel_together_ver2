@@ -8,7 +8,7 @@
 
     <div class="pageheader fixed-demo dark">
         <!-- agoda -->
-        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-color: #aaa">
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(images/map.jpg);background-color: #aaa">
             <div class="container-agoda"> 
             <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">Manage your Plan</h1>                 
             </div>
@@ -30,32 +30,32 @@
              <div id="container_user"> 
                 <div id=content_left class=cr_offset1>
                 
-               @if(!empty($profile))
-                <img src="{{ $profile->profile_pic  }}" class="profile_pic" alt="">
+               @if(!empty($user))
+                <img src="{{ $user->profile_pic  }}" class="profile_pic" alt="">
                @else
                <img src="{{ url('images/img1.jpg') }}" class="img1" alt="">
                @endif
                 
-                @if(!empty($profile))
-                   <p class="lead">{{ $profile->name}}</p>
+                @if(!empty($user))
+                   <p class="lead">{{ $user->name}}</p>
                 @else
                 <p></p>
                 @endif
 
-             @if(!empty($profile))
-                <p class="lead">Age: {{ $profile->age}}</p>
+             @if(!empty($user))
+                <p class="lead">Age: {{ $user->age}}</p>
              @else
              <p></p>
              @endif
 
-             @if(!empty($profile))
-                <p class="lead">Gender: {{ $profile->gender}}</p>
+             @if(!empty($user))
+                <p class="lead">Gender: {{ $user->gender}}</p>
              @else
              <p></p>
              @endif
 
-             @if(!empty($profile))
-                  <p class="lead">Resident: {{ $profile->country}}</p>
+             @if(!empty($user))
+                  <p class="lead">Resident: {{ $user->country}}</p>
              @else
               <p></p>
              @endif
@@ -79,11 +79,11 @@
                       <th>Departure Time</th>
                       <th>Arrive Time</th>
                       </tr>
-                  @if(count($plan) > 0)    
-                      @foreach($plan as $plan)
+                  @if(count($plans) > 0)    
+                      @foreach($plans as $plan)
                       <tr>
-                      <td><a href="{{url ('/publishedPlan')}}"><img src="{{ $plan->plan_image}}" class="plan_pic" alt=""></a></td>
-                      <td><p class="lead"><a href="{{url ('/publishPlan')}}">{{ $plan->plan_name}}</a></p></td>
+                      <td><a href="{{ URL::to('/publishPlan/' . $plan->id ) }}"><img src="{{ $plan->plan_image}}" class="plan_pic" alt=""></a></td>
+                      <td><p class="lead"><a href="{{url ('/publishPlan/' . $plan->id )}}">{{ $plan->plan_name}}</a></p></td>
                       <td><p class="lead">{{ $plan->departure_name}}</p></td>
                       <td><p class="lead">{{ $plan->destination_name}}</p></td>
                       <td><p class="lead">{{ $plan->departure_time}}</p></td>

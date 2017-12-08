@@ -29,20 +29,11 @@ class UserProfileController extends Controller
     {
         $users_id = Auth::user()->id;
 
-        $profile = DB::table('users')
-                    ->join('profiles','users_id', '=','profiles.users_id')
-                    ->select('users.*','profiles.*')
-                    ->where(['profiles.users_id'=>$users_id])
-                    ->first();
+        $user =  User::find($users_id)->profile;
                     
-        $plan = DB::table('users')
-                    ->join('plans','users_id', '=','plans.users_id')
-                    ->select('users.*','plans.*')
-                    ->where(['plans.users_id'=>$users_id])
-                    ->get();  
-                    
-        $plan= Plan::paginate(10);     
-        return view('userProfile',['profile' => $profile,'plan' => $plan]);
+        $plans = User::find($users_id)->plans;
+                        
+        return view('userProfile',['user' => $user,'plans' => $plans]);
     }
   
  

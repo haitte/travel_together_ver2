@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\PostPlan;
+use App\Plan;
 use App\location;
 use App\User;
 use Input;
@@ -15,10 +15,9 @@ class IndexController extends Controller
 
 
 
-   $post_plans_with_locations_and_users=  DB::table('post_plans')
-            ->join('users', 'users.id', '=', 'post_plans.user_id')
-            ->join('locations', 'locations.id', '=', 'post_plans.location_id')
-            ->select('post_plans.des', 'locations.location_name', 'locations.url', 'users.name', 'post_plans.id')
+   $post_plans_with_locations_and_users=  DB::table('plans')
+            ->join('users', 'users.id', '=', 'plans.user_id')
+            ->select('plans.id','plans.description', 'plans.destination_name', 'plans.plan_image', 'users.name')
             ->paginate(12);
 
         // $recom_info = DB::table('locations')
@@ -36,14 +35,14 @@ class IndexController extends Controller
 
 public function getLocationNames(Request $request){
         $term=$request->term;
-        $locations = DB::table('locations')
-            ->where('location_name','LIKE','%'.$term.'%')
+        $locations = DB::table('plans')
+            ->where('destination_name','LIKE','%'.$term.'%')
             ->take(10)
             ->get();
         $location_names=array();
         foreach($locations as $key=>$location)
         {
-            $location_names[]=['name'=>$location->location_name];
+            $location_names[]=['name'=>$location->destination_name];
         }
         
         return array_flatten($location_names);
@@ -52,11 +51,10 @@ public function getLocationNames(Request $request){
 
     public function getLastPlans(Request $request)
     {
-        $last_plans = DB::table('post_plans')
-            ->join('users', 'users.id', '=', 'post_plans.user_id')
-            ->join('locations', 'locations.id', '=', 'post_plans.location_id')
-            ->select('post_plans.des', 'locations.location_name', 'locations.url', 'users.name', 'post_plans.updated_at')
-            ->orderBy('post_plans.updated_at','DESC')
+        $last_plans = DB::table('plans')
+            ->join('users', 'users.id', '=', 'plans.user_id')
+            ->select('plans.id', 'plans.description', 'plans.destination_name', 'plans.plan_image', 'users.name')
+            ->orderBy('plans.updated_at','DESC')
             ->paginate(12);
 
         $html = view('layouts.partials.plans')->with(array('post_plan_info' => $last_plans))->render();  
@@ -67,11 +65,10 @@ public function getLocationNames(Request $request){
     {
         $search_location=$request->s_location;
       //  $search_date=$request->s_date;
-        $search = DB::table('post_plans')
-            ->join('users', 'users.id', '=', 'post_plans.user_id')
-            ->join('locations', 'locations.id', '=', 'post_plans.location_id')
-            ->select('post_plans.des', 'locations.location_name', 'locations.url', 'users.name', 'post_plans.updated_at')
-            ->where('location_name', 'LIKE', $search_location )
+        $search = DB::table('plans')
+            ->join('users', 'users.id', '=', 'plans.user_id')
+            ->select('plans.id','plans.description', 'plans.destination_name', 'plans.plan_image', 'users.name')
+            ->where('plans.destination_name', 'LIKE', $search_location )
             ->paginate(12);
 
         $html = view('layouts.partials.plans')->with(array('post_plan_info' => $search))->render();

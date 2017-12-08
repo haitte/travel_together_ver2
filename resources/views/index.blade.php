@@ -9,8 +9,8 @@
         <!-- agoda -->
         <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-color: #aaa; background-image: url(css/city-wallpaper-11.jpg);">
             <div class="container-agoda">
-                <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">feel the world</h1>
-                <h2 id="hero-banner-header2" class=" fade-in " data-selenium="hero-banner-h2">enjoy your holiday with great people</h2>
+                <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1"><b>feel the world</b></h1>
+                <h2 id="hero-banner-header2" class=" fade-in " data-selenium="hero-banner-h2"><b>enjoy your holiday with great people</b></h2>
                 <h2 id="hero-banner-header3" class="fade-in" data-selenium="hero-banner-h3"></h2>                      
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
@@ -47,7 +47,7 @@
                                         Search
                                     </button>
                                     <button class="btn btn-default " id="addplan"style="background-color:tomato; color:white">
-                                        <img src="images/brand/cross-plus.png" width="14px";height="14px"; />my plan
+                                        <a href="{{ url('/plan') }}" style="text-decoration:none; color:white"><img src="images/brand/cross-plus.png" width="14px";height="14px"; />my plan</a>
                                     </button>                    
                                 </div>    
                                 </div>

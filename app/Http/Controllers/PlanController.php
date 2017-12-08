@@ -31,7 +31,7 @@ class PlanController extends Controller
             ]);
             
         $plans = new Plan;
-        $plans->users_id=Auth::user()->id;
+        $plans->user_id=Auth::user()->id;
         $plans->plan_name = $request->input('plan_name');
         $plans->departure_time = $request->input('departure_time');
         $plans->arrive_time = $request->input('arrive_time');
