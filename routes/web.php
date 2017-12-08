@@ -13,6 +13,17 @@
 |
 */
 
+Route::get('/survey', 'PagesController@survey');
+Route::get('/myhome', 'PagesController@myhome');
+Route::get('/mytrips', 'SurveysController@mytrips');
+
+Route::resource('surveys','SurveysController');
+Route::resource('trips','TripsController');
+Route::resource('similarity','MatchmakingController');
+
+Route::get('/dashboard', 'DashboardController@index');
+
+
 Route::get('/','IndexController@renderIndex');
 
 Route::post('/', 'IndexController@search');

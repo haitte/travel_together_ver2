@@ -1,0 +1,5 @@
+//To recompile
+npm run dev
+
+//To recompile constantly (Press Ctrl+C to exit)
+npm run watch
