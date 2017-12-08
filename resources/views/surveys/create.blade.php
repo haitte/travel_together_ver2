@@ -1,8 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.headerapp')
 
 @section('content')
-    <h1>Please tell us why you'd like to visit <span class="destination"><i>{{$destination}}</i></span> in order of your top three priorities:</h1>
-    
+
+<div class="pageheader fixed-demo dark">
+        <!-- agoda -->
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(/images/survey.jpg);background-color: #aaa">
+            <div class="container-agoda"> 
+            <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">Please tell us why you'd like to travel in order of your top three priorities:</h1>                 
+            </div>
+        </div>    
+    </div>
+
+<div class="body_content">
     {!! Form::open(['action' => 'SurveysController@store','method' => 'POST']) !!}
         <div class ="form-group">
             {{Form::label('trip_id', 'Trip ID')}}
@@ -22,5 +31,5 @@
         </div>
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
-
+</div>
 @endsection

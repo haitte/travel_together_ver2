@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4084edb64a8a258923c6e932a256b54d",
+    "content-hash": "682197be6031b714cb311efbd0ffc6f3",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -839,8 +839,6 @@
                 "laravel"
             ],
             "time": "2017-11-14T15:08:13+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "laravel/socialite",
@@ -903,7 +901,6 @@
                 "oauth"
             ],
             "time": "2017-11-06T16:02:48+00:00"
->>>>>>> 824cc3e65deca8f1fbd7d4faf96c124fb495f585
         },
         {
             "name": "laravel/tinker",
@@ -2848,7 +2845,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.0"
             },
             "require-dev": {
                 "athletic/athletic": "~0.1.8",
@@ -2889,18 +2886,6 @@
         },
         {
             "name": "filp/whoops",
-<<<<<<< HEAD
-            "version": "2.1.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "9f640a4f129e57d3537887f840380109a4dd182b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/9f640a4f129e57d3537887f840380109a4dd182b",
-                "reference": "9f640a4f129e57d3537887f840380109a4dd182b",
-=======
             "version": "2.1.14",
             "source": {
                 "type": "git",
@@ -2911,7 +2896,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/filp/whoops/zipball/c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
                 "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
->>>>>>> 824cc3e65deca8f1fbd7d4faf96c124fb495f585
                 "shasum": ""
             },
             "require": {
@@ -2959,11 +2943,7 @@
                 "throwable",
                 "whoops"
             ],
-<<<<<<< HEAD
-            "time": "2017-11-17T08:15:51+00:00"
-=======
             "time": "2017-11-23T18:22:44+00:00"
->>>>>>> 824cc3e65deca8f1fbd7d4faf96c124fb495f585
         },
         {
             "name": "hamcrest/hamcrest-php",

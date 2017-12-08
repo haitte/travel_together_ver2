@@ -67,7 +67,7 @@
     letter-spacing: 0.2px !important;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
-    color: #rgba(72, 71, 72, 0.85) !important;
+    color: #484748 !important;
 }
 .post_plan_main{
     padding-left:8%;
@@ -76,22 +76,22 @@
 .post_row{
 
 }
-. post_clo{
+.post_clo{
 
 }
   </style>
 
   <!-- css file -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href="css/bootsnav.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/index_main.css" rel="stylesheet">
-    <link href="css/UserProfile.css" rel="stylesheet" type="text/css">
-    <link href="css/PublishPlan.css" rel="stylesheet" type="text/css">
-    <link href="css/app.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootsnav.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/index_main.css" rel="stylesheet">
+    <link href="/css/UserProfile.css" rel="stylesheet" type="text/css">
+    <link href="/css/PublishPlan.css" rel="stylesheet" type="text/css">
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
 
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -141,13 +141,15 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="/mytrips">My Trips</a></li>
+                    <li><a href="/trips">All Trips</a></li>
                     <li class="dropdown">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Edit</a>
                         <ul class="dropdown-menu">
                             <li><a href="{{url ('/profile')}}">Edit Profile</a></li>
                             <li class="dropdown"></li>
-                            <li><a href="{{url ('/plan')}}">Edit Plan</a></li>
+                            <li><a href="{{url ('/plan')}}">Create Plan</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url ('/userProfile')}}">My Profile</a></li>
