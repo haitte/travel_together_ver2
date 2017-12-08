@@ -17,7 +17,7 @@ class Trip extends Model
     public $timestamps = true;
     
     public function user(){
-        return $this->belongsTo('App\User','users_id');
+        return $this->belongsTo('App\User','user_id');
     }
     
     public function survey(){

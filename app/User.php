@@ -31,4 +31,21 @@ class User extends Authenticatable
     public function trips(){
         return $this->hasMany('App\Trip');
     }
+
+    public function socialProfile()
+    {
+        return $this->hasOne(SocialLoginProfile::class);
+    }
+
+    public function plans()
+    {
+        return $this->hasMany(Plan::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+
 }

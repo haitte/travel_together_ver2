@@ -8354,3 +8354,6 @@ body {
   /*background:blue !important; */
 }
 
+.col-md-4{position:relative;min-height:1px;padding-left:15px;padding-right:15px}
+.col-md-4{width:8.33333333%}
+.col-md-4{width:33.33333333%}

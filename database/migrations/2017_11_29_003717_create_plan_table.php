@@ -15,15 +15,16 @@ class CreatePlanTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('users_id');
+            $table->integer('user_id')->unsigned()
+                ->references('id')->on('users');
             $table->string('plan_name');
-            $table->string('departure_name');
-            $table->string('departure_time');
-            $table->string('destination_name');
-            $table->string('arrive_time');
-            $table->integer('group_num');
-            $table->text('description');
             $table->string('plan_image');
+            $table->text('description');
+            $table->date('departure_time');
+            $table->date('arrive_time');
+            $table->string('departure_name');
+            $table->string('destination_name');
+            $table->integer('group_num');
             $table->timestamps();
         });
     }
