@@ -28,7 +28,7 @@ class ItemsTableSeeder extends Seeder
             $dep_date=$faker->dateTimeThisDecade->format('Y-m-d');
             $dep_date=$faker->dateTimeThisDecade->format('Y-m-d');
             Plan::create([
-                'user_id'=>$faker->numberBetween(1, 30),
+                'user_id'=>$faker->numberBetween(1, 15),
                 'plan_name'=>$faker->numerify('Plan ###'),
                 'plan_image'=>$faker->imageUrl(300,200),
                 'description'=>$faker->text($maxNbChars = 100),
