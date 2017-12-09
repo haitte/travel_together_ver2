@@ -20,8 +20,8 @@ class CreatePlanTable extends Migration
             $table->string('plan_name');
             $table->string('plan_image');
             $table->text('description');
-            $table->date('departure_time');
-            $table->date('arrive_time');
+            $table->string('departure_time');
+            $table->string('arrive_time');
             $table->string('departure_name');
             $table->string('destination_name');
             $table->integer('group_num');

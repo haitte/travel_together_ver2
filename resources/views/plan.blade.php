@@ -4,7 +4,7 @@
 
     <div class="pageheader fixed-demo dark">
         <!-- agoda -->
-        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image:url('{{ asset('images/plan.jpg') }}');background-color: #aaa">
+        <div id="hero-banner" class="hero-banner-container" data-selenium="hero-banner" style="background-image: url(/images/plan.jpg);background-color: #aaa">
             <div class="container-agoda">
             <h1 id="hero-banner-header1" class=" fade-in " data-selenium="hero-banner-h1">Create your own plan</h1>                 
             </div>
@@ -51,8 +51,8 @@
                         <div class="form-group{{ $errors->has('departure_name') ? ' has-error' : '' }}">
                             <label for="departure_name" class="col-md-4 control-label">Enter Departure Name</label>
 
-                            <div class="col-md-6">
-                                <input id="departure_name" type="" class="form-control" name="departure_name" required>
+                            <div class="col-md-6">                                
+                                <input id="departure_name" type="departure_name" class="form-control" name="departure_name" required>
 
                                 @if ($errors->has('departure_name'))
                                     <span class="help-block">
@@ -66,7 +66,23 @@
                             <label for="departure_time" class="col-md-4 control-label">Enter Departure Time</label>
 
                             <div class="col-md-6">
-                                <input id="departure_time" type="" class="form-control" name="departure_time" placeholder="yyyy/mm/dd" required>
+                                <div class="flr-date _j_time_tpl">
+                                        <div class="ui-input">
+                                <input id="from" type="" class="form-control" name="departure_time" placeholder="yyyy/mm/dd" required>
+                                <i class="icon-date _j_date"></i>
+                                     <input type="text" value="" readonly="readonly" id="together_datepicker" style="width: 30px; height: 30px; border: none; padding: 0; margin: 0;position: absolute;left: 225px;top: 0;opacity: 0">
+                                  <div class="drop drop-date hide _j_time_list">
+                                            <ul>
+                                                 <li class="_j_time_select" data-timeflag="1" data-timeinfo="all time"><a><span class="num _j_show_num"><em>2207</em></span>all time</a></li>
+                                                 <li class="_j_time_select" data-timeflag="2" data-timeinfo="go today"><a><span class="num _j_show_num"><em>25</em></span>go today</a></li>
+                                                 <li class="_j_time_select" data-timeflag="3" data-timeinfo="1 month"><a><span class="num _j_show_num"><em>726</em></span>1 month</a></li>
+                                                 <li class="_j_time_select" data-timeflag="4" data-timeinfo="1-3 months"><a><span class="num _j_show_num"><em>898</em></span>1-3 months</a></li>
+                                                 <li class="_j_time_select" data-timeflag="5" data-timeinfo="3+ months"><a><span class="num _j_show_num"><em>625</em></span>3+ months</a></li>
+                                             </ul>
+                                        </div>
+                                            
+                                    </div>
+                                </div>
                                 @if ($errors->has('departure_time'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('departure_time') }}</strong>
@@ -90,11 +106,25 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('arrive_time') ? ' has-error' : '' }}">
-                            <label for="arrive_time" class="col-md-4 control-label">Enter Arrive Time</label>
+                            <label for="to" class="col-md-4 control-label">Enter Arrive Time</label>
 
                             <div class="col-md-6">
-                                <input id="arrive_time" type="" class="form-control" name="arrive_time" placeholder="yyyy/mm/dd" required>
-
+                                 <div class="flr-date _j_time_tpl">
+                                        <div class="ui-input">
+                                <input id="to" type="" class="form-control" name="arrive_time" placeholder="yyyy/mm/dd" required>
+                                 <i class="icon-date _j_date"></i>
+                                            <input type="text" value="" readonly="readonly" id="together_datepicker" style="width: 30px; height: 30px; border: none; padding: 0; margin: 0;position: absolute;left: 225px;top: 0;opacity: 0">
+                                        <div class="drop drop-date hide _j_time_list">
+                                            <ul>
+                                                 <li class="_j_time_select" data-timeflag="1" data-timeinfo="all time"><a><span class="num _j_show_num"><em>2207</em></span>all time</a></li>
+                                                 <li class="_j_time_select" data-timeflag="2" data-timeinfo="go today"><a><span class="num _j_show_num"><em>25</em></span>go today</a></li>
+                                                 <li class="_j_time_select" data-timeflag="3" data-timeinfo="1 month"><a><span class="num _j_show_num"><em>726</em></span>1 month</a></li>
+                                                 <li class="_j_time_select" data-timeflag="4" data-timeinfo="1-3 months"><a><span class="num _j_show_num"><em>898</em></span>1-3 months</a></li>
+                                                 <li class="_j_time_select" data-timeflag="5" data-timeinfo="3+ months"><a><span class="num _j_show_num"><em>625</em></span>3+ months</a></li>
+                                             </ul>
+                                    </div>
+                                    </div>
+                                    </div>
                                 @if ($errors->has('arrive_time'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('arrive_time') }}</strong>
