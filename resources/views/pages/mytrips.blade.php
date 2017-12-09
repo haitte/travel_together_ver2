@@ -31,7 +31,7 @@
                                 {{Form::hidden('_method','DELETE')}}
                                 {{Form::submit('Delete Trip', ['class' => 'btn btn-danger btn-block'])}}
                             {!! Form::close()!!}
-                            <a href="" class="btn btn-primary btn-block disabled">Edit Trip</a>
+                    
                             
                                  <a href="/surveys/{{$trip->survey->survey_id}}/edit" class="btn btn-primary btn-block">Reset Preferences</a>
                             

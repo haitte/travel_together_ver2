@@ -139,7 +139,7 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="/mytrips">My Trips</a></li>
+                    <li><a href="/plan">Create new Trip</a></li>
                     <li><a href="/trips">All Trips</a></li>
                     <li class="dropdown">
 
@@ -147,7 +147,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{url ('/profile')}}">Edit Profile</a></li>
                             <li class="dropdown"></li>
-                            <li><a href="{{url ('/plan')}}">Create Plan</a></li>
+                            <li><a href="{{url ('/mytrips')}}">My Plans</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url ('/userProfile')}}">My Profile</a></li>

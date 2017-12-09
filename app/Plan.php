@@ -10,4 +10,8 @@ class Plan extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
+    public function survey(){
+        return $this->hasOne('App\Survey');
+    }
 }

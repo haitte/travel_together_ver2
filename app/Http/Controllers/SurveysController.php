@@ -57,21 +57,24 @@ class SurveysController extends Controller
     {
         //
         $this->validate($request,[
-            'trip_id'=>'required',
             'first_p'=> 'required',
             'second_p'=> 'required',
             'third_p'=> 'required'
             ]);
             
+            $mytrip = session('mytrip');
+            
             //Create Survey
             $survey = new Survey;
-            $survey->trip_id = $request->input('trip_id');
+            $survey->trip_id = $mytrip;
             $survey->first_p = $request->input('first_p');
             $survey->second_p = $request->input('second_p');
             $survey->third_p = $request->input('third_p');
             $survey->save();
             
-            return redirect('/surveys')->with('success','Survey Added');
+            session()->regenerate();
+            
+            return redirect('/mytrips')->with('success','Survey Added');
     }
 
     /**
