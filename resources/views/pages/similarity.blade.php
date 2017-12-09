@@ -20,6 +20,8 @@
                     @if(($my_trip->departure_time) <= ($trip->arrive_time)) 
                         <div class="well">
                         <h1>{{$trip->user->name}}</h1>
+                        <h6>Destination: {{$trip->destination_name}}</h6>
+                        <h6>From {{$trip->departure_time}} to {{$trip->arrive_time}}</h6>
                         @if(($trip->survey->first_p) == ($my_trip->survey->first_p)||($trip->survey->second_p) == ($my_trip->survey->first_p)||($trip->survey->third_p) == ($my_trip->survey->first_p))
                         <p style="color:red;">Extremely Compatible!</p>
                         

@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Redirect;
 use App\Plan;
 use Auth;
+use App\Survey;
+use Carbon;
 
 class PlanController extends Controller
 {
@@ -20,6 +23,8 @@ class PlanController extends Controller
     
     public function addPlan(Request $request)
     {
+        session()->regenerate();
+        
          $this->validate($request, [
             'plan_name' => 'required',
             'departure_time' => 'required',
@@ -48,6 +53,9 @@ class PlanController extends Controller
         }
         $plans->plan_image = $url;
         $plans->save();
-        return redirect('/plan')->with('response','Plan Added Successfully');
+        
+        session(['mytrip' => $plans->id]);
+
+        return Redirect::to('/survey')->with('response','Plan Added Successfully!');
     }
 }

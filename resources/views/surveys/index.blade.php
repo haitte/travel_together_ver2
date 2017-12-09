@@ -12,7 +12,7 @@
     </div>
 
 <div class="body_content">
-    @if(count($surveys) >0)
+    <!--@if(count($surveys) >0)
         @foreach($surveys as $survey)
             <div class="well">
                 <h3>trip id is {{$survey->trip_id}}</h3> <br />
@@ -29,6 +29,7 @@
         {{$surveys->links()}}
     @else
         <p>No surveys found</p>
-    @endif
+    @endif -->
+    Sorry, this content is only available to administrators.
     </div>
 @endsection

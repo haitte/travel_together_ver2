@@ -14,10 +14,7 @@
 <div class="body_content">
     
     {!! Form::open(['action' => ['SurveysController@update',$survey->survey_id],'method' => 'POST']) !!}
-        <div class ="form-group">
-            {{Form::label('trip_id', 'Trip ID')}}
-            {{Form::text('trip_id',$survey->trip_id,['class'=>'form-control','placeholder'=>'3'])}}
-        </div>
+        
         <div class ="form-group">
             {{Form::label('first_p', 'First Preference')}}
             {{Form::select('first_p', ['option1' => 'Food', 'option2' => 'Historical Sites', 'option3' => 'Exploring Art', 'option4' => 'Living like a Local', 'option5' => 'Finding hidden treasures'], $survey->first_p)}}
