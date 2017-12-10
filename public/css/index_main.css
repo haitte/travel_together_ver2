@@ -1,0 +1,313 @@
+
+body.critical #hero-banner {
+    background-size: cover;
+}
+body, p, div {
+  
+    word-wrap: break-word;
+}
+#hero-banner>.container-agoda {
+    padding-bottom:10%;
+    padding-top: 28%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0%;
+}
+#signin > a{
+    color: tomato !important;
+}
+
+#hero-banner #hero-banner-header1, #hero-banner #hero-banner-header2, #hero-banner #hero-banner-hosted, #hero-banner .container-agoda {
+    position: relative;
+}
+
+#hero-banner #hero-banner-header1, #hero-banner #hero-banner-header2, #hero-banner #hero-banner-hosted, #hero-banner .container-agoda {
+    position: relative;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+/*  */
+.newhome #hero-banner, .newhome #hero-banner #hero-banner-hosted, .sticky-search-box, .sticky-search-box #hero-banner>.container-agoda{
+    z-index: auto;
+}
+#hero-banner {
+    margin-top: -20px;
+    height: auto;
+    background-position: center 0;
+    background-size: auto;
+    box-shadow: inset 0 -130px 100px -100px #000;
+    position: relative;
+}
+
+.filter-wrapper {
+    padding: 1% 2%;
+}
+
+.filter-wrapper {
+    /* width: auto; */
+    /* min-height: 143px; */
+    margin: 0 auto;
+}
+/* destination box size posotion*/
+.filter-wrapper>.flr-palce {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding: 0;
+    font-weight: 400;
+    margin: 5px 5px 0 0;
+    
+}
+
+/* destination time box size posotion*/
+.filter-wrapper>.flr-date {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding: 0;
+    font-weight: 400;
+    margin: 5px 5px 0 0;
+    
+}
+.filter-bar .flr-date {
+    float: left;
+    width: 260px;
+    margin-right: 5px;
+}
+.filter-bar .flr-place {
+    float: left;
+    margin-right: 2px;
+    width: 200px;
+}
+ /* destination input */
+.filter-bar {
+    padding: 2% 0;
+    margin-top: 10%;
+    background-color: hsla(0,0%,100%,.8);
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #ccc;
+}
+.filter-bar .ui-input input {
+    height: 38px;
+    line-height: 38x;
+}
+.filter-bar .flr-date .ui-input input {
+    width: 222px;
+}
+.filter-bar .flr-date .ui-input {
+    position: relative;
+}
+.ui-input input, .ui-textarea textarea {
+    height: 30px;
+    padding: 0 18px;
+    background-color: #efefef;
+    border: none;
+    margin: 0;
+    line-height: 32px;
+    font-size: 14px;
+    color: #666;
+    outline: 0;
+    vertical-align: top;
+}
+.filter-bar .flr-date .icon-date {
+    right: 13px;
+    top: 13px;
+}
+.icon-date.on {
+    background-position: -80px -120px;
+}
+.icon-date {
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    background: url(#) no-repeat 0 -120px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.filter-bar .drop-place {
+    width: 460px;
+}
+.filter-bar .drop {
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.1);
+    position: absolute;
+    z-index: 10;
+}
+.filter-bar .drop-place .all a {
+    border-bottom-color: #d5d5d5;
+}
+.hide {
+    display: none;
+}
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    /* border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial; */
+}
+.filter-bar .drop a {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #efefef;
+    padding: 0 18px;
+    color: #666;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+input{
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 13.3333px Arial;
+}
+/* filter search */
+.palce-search{
+    display: table;
+    /* height: 48px; */
+    background-color: #fff;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 10px 5px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.07);
+}
+.drop-place a {
+    color: #0a0a0a;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* index page add my plane btn */
+
+#planbutton{
+    background-color: tomato;
+    border-color: tomato;
+    /* float: right; */
+    font-size: 16px;
+    line-height: 40px;
+    color: #fff;
+}
+#planbutton i {
+    float: left;
+    margin: 13px 5px 0 0;
+    width: 14px;
+    height: 14px;
+    z-index: 9;
+
+    background: url(images/brand/cross-plus.png) no-repeat 0 0;
+    overflow: hidden;
+}
+
+#planbutton a{
+    color: #0a0a0a;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* header h1 and h2 */
+#hero-banner h1, #hero-banner h2 {
+    margin: 1% 0;
+    color: snow;
+    text-align: center;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 2%;
+    line-height: 1.1;
+}
+#hero-banner h1 {
+    font-size: 53px !important;
+}
+h1 {
+    display: block;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+/* header box */
+#hero-banner-hosted{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    display: block;
+    position: relative;
+    font-size: 0;
+    padding: 2%;
+    background-color: hsla(0,0%,100%,.8);
+}
+
+.tab-content>.active {
+    display: block;
+    visibility: visible;
+}
+/* search bar */
+.search-bar, .sticky-search-box .search-bar {
+    transition: all .4s ease-in-out;
+}
+
+/* search cell */
+.oneline-searchbox .dates .container-cell, .oneline-searchbox .occupancy .container-cell, .oneline-searchbox .search .container-cell {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 1.25;
+}
+
+ul, ol, li, dl, dd, dt {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.filter-bar .drop-date ul {
+    width: 238px;
+    padding: 0 10px;
+}
+.drop-date > li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+/* header- top plan, new plan btn */
+.filter-bar .sort {
+    /* float: left; */
+    padding-top: 6px;
+    font-size: 14px;
+    line-height: 26px;
+}
+.filter-bar .sort a {
+    /* float: left; */
+    height: 26px;
+    margin-right: 0px;
+    padding: 0px;
+    border: 2px solid #fff;
+    color:tomato;
+}
+.filter-bar .sort .on {
+    border-color: tomato;
+}
+

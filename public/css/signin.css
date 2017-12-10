@@ -1,0 +1,291 @@
+ * {
+            margin: 0;
+            outline:0;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            }
+            video { 
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: -100;
+                transform: translateX(-50%) translateY(-50%);
+            background:url(http://www.publicdomainpictures.net/pictures/70000/velka/old-white-background.jpg) no-repeat;
+            background-size: cover;
+            transition: 1s opacity;
+            } 
+            
+            html {
+            font-family: 'Raleway', sans-serif;
+            min-height:100%;
+            }
+            .container {
+            position: relative;
+            overflow: hidden;
+            width: 70%;
+            height: 60%;          
+            margin: 80px auto 0; 
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 20px;
+            }
+            .box {
+            float: left;
+            height: 80%;
+            padding: 5%;
+            }
+            .box.left{
+            background-color: #ffffff;
+            }
+            .box.right {
+            background: linear-gradient(310deg, rgba(0,0,0,0.5), rgba(0,0,0,0.28));
+            }
+            h1 {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 1.5em;
+            text-align: center;
+            text-indent: 6px;
+            letter-spacing: 6px;
+            line-height: 1.4em;
+            text-transform: uppercase;
+            }
+            .tabs {
+            font-weight: 600;
+            margin-bottom: 2em;
+            border-bottom: 1px solid #d9d9d9;
+            }
+            .tabs .tab {
+            display: inline-block;
+            margin-bottom: -1px;
+            padding: 20px 15px 10px;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid #d9d9d9;
+            transition: all 0.1s ease-in-out;
+            }
+            .tabs .tab a {
+            font-size: 11px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #d9d9d9;
+            transition: all 0.1s ease-in-out;
+            }
+            .tabs .tab.active a, body .container .tabs .tab:hover a {
+            color: #1E282C;
+            }
+            .tabs .tab.active {
+            border-bottom: 1px solid #1E282C;
+            }
+            .content form {
+            position: relative;
+            height: 287px;
+            }
+            .content label, .container .content input, .container .content .extra-link {
+            -moz-animation: slideIn 0.4s ease-in-out;
+            -webkit-animation: slideIn 0.4s ease-in-out;
+            animation: slideIn 0.4s ease-in-out;
+            }
+            .content label {
+            font-size: 12px;
+            color: #1E282C;
+            -moz-user-select: -moz-none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            }
+            .content label:not([for='remember']) {
+            display: none;
+            }
+            .content input.inpt {
+            font-size: 1em;
+            display: block;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 14px;
+            padding: 15px 12px;
+            color: #999999;
+            border: none;
+            border-bottom: 1px solid #d9d9d9;
+            background: transparent;
+              -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            }
+            .content input.inpt::-webkit-input-placeholder {
+            font-size: 14px;
+            color: #999999;
+            }
+            .content input.inpt:-ms-input-placeholder {
+            font-size: 14px;
+            color: #999999;
+            }
+            .content input.inpt:focus {
+            border-color: #999999;
+            }
+            .content input.submit {
+            font-size: 0.8em;
+            display: block;
+            width: 100%;
+            height: 40px;
+            background: transparent;
+            cursor: pointer;
+            /* vertical-align: display; */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid #1E282C;
+            }
+            .content input.submit:hover {
+            background-color: #1E282C;
+            color: #ffffff;
+            transition: 0.2s ease;
+            }
+            .content input:focus {
+            outline: none;
+            }
+
+            .content .submit-wrap {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            }
+            .content .submit-wrap a {
+            font-size: 12px;
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #999999;
+            }
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+            .content .submit-wrap a:hover {
+            text-decoration: underline;
+            }
+            /* .checkbox{
+                min-height: 29px;
+            }
+            .checkbox label, .radio label {
+                min-height: 22px;
+                padding-left: 20px;
+                margin-bottom: 0;
+                font-weight: 400;
+                cursor: pointer;
+            }
+            .checkbox, .checkbox-inline{
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 7px;
+            }
+            .form-group> .checkbox label {
+                position: relative;
+                display: block !important;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .checkbox-inline input[type=checkbox], .checkbox input[type=checkbox], .radio-inline input[type=radio], .radio input[type=radio] {
+                position: absolute;
+                margin-left: -20px;
+                margin-top: 4px\9;
+            }
+            input[type=checkbox], input[type=radio] {
+                margin: 4px 0 0;
+                margin-top: 1px\9;
+                line-height: normal;
+            }
+            input[type=checkbox], input[type=radio] {
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 0;
+            } */
+            @keyframes slideIn {
+            0% {
+                opacity: 0;
+                margin-left: -320px;
+            }
+            100% {
+                opacity: 1;
+                margin-left: 0px;
+            }
+            }
+            @-webkit-keyframes slideIn {
+            0% {
+                opacity: 0;
+                margin-left: -320px;
+            }
+            100% {
+                opacity: 1;
+                margin-left: 0px;
+            }
+            }
+
+            /* Social Networks Sign In */
+            .right .sign-via {
+            display: block;
+            text-align: left;
+            margin-bottom: 60px;
+            font-size: 28px;
+            color: #FFF;
+            text-align: center;
+            animation: reveal 0.9s ease;
+            }
+
+            button.social-network {
+            font-size: 1em;
+            letter-spacing: 2px;
+            text-align: left;
+            color: #efefef;
+            width: 100%;
+            height: 45px;
+            padding-left: 35%;
+            margin: 15px 0px;
+            border: 2px solid #efefef;
+            background: transparent;
+            transition: 0.2s ease;
+            cursor: pointer;
+            animation: reveal 0.9s ease;
+
+            }
+
+            button i{
+            float: left;
+            margin: 1px 20px 0px 0px;
+            }
+
+            button.social-network:hover {
+            color: #999;
+            background: #efefef;
+            transition: 0.2s ease;
+            }
+            .emptybox{
+            text-align: center;
+            
+            }
+
+            @keyframes reveal {
+            0% {
+                opacity: 0;
+            /*     margin-left: 360px; */
+            }
+            100% {
+                opacity: 1;
+                margin-left: 0px;
+            }
+            }
+            @-webkit-keyframes reveal {
+            0% {
+                opacity: 0;
+                margin-left: 360px;
+            }
+            100% {
+                opacity: 1;
+                margin-left: 0px;
+            }
+            }
+
