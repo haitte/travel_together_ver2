@@ -7,6 +7,13 @@ global:
     - DB_DATABASE: 'MAP:DATABASE1_NAME'
     - DB_USERNAME: 'MAP:DATABASE1_USER'
     - DB_PASSWORD: 'MAP:DATABASE1_PASS'
+    - CLIENT_ID:  'MAP:CLIENT_ID'
+    - CLIENT_SECRET: 'MAP:CLIENT_SECRET'
+    - TWITTER_CLIENT_ID:  'MAP:TWITTER_CLIENT_ID'
+    - TWITTER_CLIENT_SECRET: 'MAP:TWITTER_CLIENT_SECRET'
+    - FACEBOOK_CLIENT_ID: 'MAP:FACEBOOK_CLIENT_ID'
+    - FACEBOOK_CLIENT_SECRET: 'MAP:FACEBOOK_CLIENT_SECRET'
+    
 web1:
   name: travel-together
   document_root: /public
@@ -33,4 +40,5 @@ web1:
   
 database1:
   name: travel-database
-  type: mysql
+
+
