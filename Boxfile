@@ -25,9 +25,9 @@ web1:
   php_extensions:
     - pdo_mysql
   before_deploy:
-    - "php artisan cache:clear"
+    - "php artisan cache"
     - "php artisan migrate:install"
-    - "php artisan migrate:refersh --force"
+    - "php artisan migrate:refresh --force"
     - "php artisan migrate --force"
     - "php artisan db:seed --force"
   
