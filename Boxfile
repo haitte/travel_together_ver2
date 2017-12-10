@@ -2,30 +2,35 @@ global:
   env:
     - APP_ENV: production
     - APP_DEBUG: true
-    - APP_KEY: SomeRandomString
+    - APP_KEY: base64:Hdn9KUfaSI9u3LW8AQObpMOHgI6qIj0HMMTi0WLMLds=
     - DB_HOST: 'MAP:DATABASE1_HOST'
     - DB_DATABASE: 'MAP:DATABASE1_NAME'
     - DB_USERNAME: 'MAP:DATABASE1_USER'
     - DB_PASSWORD: 'MAP:DATABASE1_PASS'
 web1:
   name: travel-together
+  document_root: /public
+  nonpersistent_writable_dirs:
+    - /data/bootstrap/cache
+    - storage/cache
   shared_writable_dirs:
-    - /storage/cache
     - /storage/database
     - /storage/logs
     - /storage/sessions
     - /storage/views
     - /storage/work
-  document_root: /public
-  php_version: 7.0.0
+    - /storage/framework/sessions
+    - /storage/framework/cache
+    - /storage/framework/views
+  php_extensions:
+    - pdo_mysql
   before_deploy:
+    - "php artisan cache:clear"
     - "php artisan migrate:install"
-    - "php artisan migrate"
-  after_deploy:
-    - "rm -f storage/cache/*"
-    - "rm -f storage/views/*"
+    - "php artisan migrate:refersh --force"
+    - "php artisan migrate --force"
+    - "php artisan db:seed --force"
   
 database1:
-  name: posts
+  name: travel-database
   type: mysql
-  topology: redundant
