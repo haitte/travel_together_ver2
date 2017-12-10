@@ -2,7 +2,7 @@ global:
   env:
     - APP_ENV: production
     - APP_DEBUG: true
-    - APP_KEY: base64:Hdn9KUfaSI9u3LW8AQObpMOHgI6qIj0HMMTi0WLMLds=
+    - APP_KEY: base64:ramikrlgJDXBTuwMdyrmKeNOV9NykZctMglG+qWxstc=
     - DB_HOST: 'MAP:DATABASE1_HOST'
     - DB_DATABASE: 'MAP:DATABASE1_NAME'
     - DB_USERNAME: 'MAP:DATABASE1_USER'
