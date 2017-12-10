@@ -11,7 +11,7 @@ web1:
   name: travel-together
   document_root: /public
   nonpersistent_writable_dirs:
-    - /data/bootstrap/cache
+    - bootstrap/cache
     - storage/cache
   shared_writable_dirs:
     - /storage/database
