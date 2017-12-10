@@ -63,7 +63,7 @@
 
                     <div class="box right col-sm-6">                        
                             <div class="info signin-info" >
-                                <button onclick="location.href='/twitter/auth';" class="social-network twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</button>
+                                <button onclick="location.href='/twitter/auth';" class="social-network twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter Login</button>
                                 <button onclick="location.href='/google/auth';" class="social-network google"><i class="fa fa-google-plus" aria-hidden="true"></i>Google</button>
                                 <button onclick="location.href='/register';" class="social-network" style="color:tomato !important"><i aria-hidden="true" ></i>Register</button>
                                 <button onclick="location.href='/home';" class="social-network"><i aria-hidden="true"></i>Home</button>
